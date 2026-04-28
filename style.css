@@ -264,6 +264,79 @@ body {
 .quiz-again-btn { background: linear-gradient(135deg, var(--teal), var(--emerald)); color: #fff; }
 .quiz-again-btn:hover { transform: scale(1.05); }
 
+/* ===== Daily Tracker ===== */
+.daily-tracker-top {
+  display: flex; gap: 20px; max-width: 800px; margin: 0 auto 28px;
+  align-items: stretch;
+}
+.streak-card {
+  background: var(--card-bg); border-radius: var(--radius); padding: 28px 32px;
+  text-align: center; box-shadow: var(--card-shadow); min-width: 160px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.streak-flame { font-size: 3rem; animation: flamePulse 1.5s ease-in-out infinite; }
+@keyframes flamePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+.streak-num { font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, var(--saffron), var(--rose)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.streak-label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; }
+.today-stats {
+  flex: 1; background: var(--card-bg); border-radius: var(--radius); padding: 24px;
+  box-shadow: var(--card-shadow);
+}
+.today-stats h3 { font-size: 1rem; margin-bottom: 16px; }
+.today-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.today-stat {
+  text-align: center; padding: 12px; background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(123,45,142,0.06));
+  border-radius: var(--radius-sm);
+}
+.ts-value { display: block; font-size: 1.8rem; font-weight: 900; color: var(--saffron); }
+.ts-label { display: block; font-size: 0.7rem; color: var(--text-light); font-weight: 700; margin-top: 2px; }
+
+/* Calendar */
+.calendar-section {
+  max-width: 800px; margin: 0 auto 28px; background: var(--card-bg);
+  border-radius: var(--radius); padding: 24px; box-shadow: var(--card-shadow);
+}
+.calendar-section h3 { font-size: 1rem; margin-bottom: 16px; }
+.activity-calendar {
+  display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px;
+  max-width: 500px; margin: 0 auto;
+}
+.cal-day {
+  aspect-ratio: 1; border-radius: 6px; display: flex; align-items: center;
+  justify-content: center; font-size: 0.7rem; font-weight: 700; color: var(--text-light);
+  transition: all 0.2s; cursor: default;
+}
+.cal-day.level-0 { background: #f0f0f0; }
+.cal-day.level-1 { background: #ffd6c2; color: #a0522d; }
+.cal-day.level-2 { background: #ff9e6b; color: #fff; }
+.cal-day.level-3 { background: var(--saffron); color: #fff; }
+.cal-day.today { box-shadow: 0 0 0 2px var(--purple); }
+.cal-legend {
+  display: flex; align-items: center; gap: 4px; justify-content: center;
+  margin-top: 12px; font-size: 0.7rem; color: var(--text-light);
+}
+.cal-day-sm { width: 14px; height: 14px; border-radius: 3px; }
+.cal-day-sm.level-0 { background: #f0f0f0; }
+.cal-day-sm.level-1 { background: #ffd6c2; }
+.cal-day-sm.level-2 { background: #ff9e6b; }
+.cal-day-sm.level-3 { background: var(--saffron); }
+
+/* Weekly Chart */
+.weekly-section {
+  max-width: 800px; margin: 0 auto 28px; background: var(--card-bg);
+  border-radius: var(--radius); padding: 24px; box-shadow: var(--card-shadow);
+}
+.weekly-section h3 { font-size: 1rem; margin-bottom: 16px; }
+.weekly-chart {
+  display: flex; align-items: flex-end; gap: 8px; justify-content: center;
+  height: 140px; padding-top: 20px;
+}
+.week-bar-col { display: flex; flex-direction: column; align-items: center; flex: 1; max-width: 80px; height: 100%; }
+.week-bar-val { font-size: 0.7rem; font-weight: 800; color: var(--saffron); margin-bottom: 4px; }
+.week-bar-track { flex: 1; width: 100%; max-width: 36px; background: #f0f0f0; border-radius: 6px; overflow: hidden; position: relative; display: flex; align-items: flex-end; }
+.week-bar-fill { width: 100%; background: linear-gradient(to top, var(--saffron), var(--gold)); border-radius: 6px; transition: height 0.5s ease; min-height: 4px; }
+.week-bar-label { font-size: 0.65rem; font-weight: 700; color: var(--text-light); margin-top: 6px; text-align: center; }
+
 /* ===== Progress ===== */
 .progress-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 800px; margin: 0 auto 32px; }
 .stat-card {
@@ -360,4 +433,10 @@ body {
   .carousel-letter { font-size: 5rem; }
   .quiz-letter { font-size: 4rem; }
   .quiz-options { grid-template-columns: 1fr; }
+  .daily-tracker-top { flex-direction: column; }
+  .streak-card { flex-direction: row; gap: 12px; min-width: auto; padding: 16px; }
+  .streak-flame { font-size: 2rem; }
+  .streak-num { font-size: 2rem; }
+  .activity-calendar { grid-template-columns: repeat(6, 1fr); }
+  .weekly-chart { height: 100px; }
 }

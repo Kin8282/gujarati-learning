@@ -4,17 +4,31 @@ const state = {
   xp: parseInt(localStorage.getItem('gu_xp') || '0'),
   achievements: JSON.parse(localStorage.getItem('gu_achievements') || '[]'),
   quizCount: parseInt(localStorage.getItem('gu_quizCount') || '0'),
+  dailyLog: JSON.parse(localStorage.getItem('gu_dailyLog') || '{}'),
   currentView: 'home'
 };
+function todayKey() { return new Date().toISOString().slice(0,10); }
+function getTodayLog() {
+  const key = todayKey();
+  if (!state.dailyLog[key]) state.dailyLog[key] = { xp:0, letters:0, quizzes:0, words:0 };
+  return state.dailyLog[key];
+}
+function logDaily(field, amount) {
+  const log = getTodayLog();
+  log[field] = (log[field] || 0) + amount;
+  save();
+}
 function save() {
   localStorage.setItem('gu_learned', JSON.stringify(state.learned));
   localStorage.setItem('gu_xp', String(state.xp));
   localStorage.setItem('gu_achievements', JSON.stringify(state.achievements));
   localStorage.setItem('gu_quizCount', String(state.quizCount));
+  localStorage.setItem('gu_dailyLog', JSON.stringify(state.dailyLog));
 }
 function markLearned(key) {
   if (!state.learned[key]) {
     state.learned[key] = true;
+    logDaily('letters', 1);
     addXP(5);
     if (Object.keys(state.learned).length === 1) unlock('first_letter');
     if (SWAR.every(s => state.learned['s_'+s.letter])) unlock('all_swar');
@@ -23,7 +37,7 @@ function markLearned(key) {
     save(); updateBadges();
   }
 }
-function addXP(amount) { state.xp += amount; save(); updateXPBar(); showToast(`+${amount} XP ⭐`, 'xp'); }
+function addXP(amount) { state.xp += amount; logDaily('xp', amount); save(); updateXPBar(); showToast(`+${amount} XP ⭐`, 'xp'); }
 function unlock(id) {
   if (!state.achievements.includes(id)) {
     state.achievements.push(id);
@@ -362,7 +376,7 @@ function runQuiz(questions, quizType) {
   }
 
   function showResult() {
-    state.quizCount++; save();
+    state.quizCount++; logDaily('quizzes', 1); save();
     if (state.quizCount >= 5) unlock('quiz_5');
     if (score === questions.length) { unlock('quiz_perfect'); triggerConfetti(); }
     const pct = Math.round(score/questions.length*100);
@@ -382,12 +396,107 @@ function runQuiz(questions, quizType) {
 }
 
 /* ===== Progress ===== */
+function getStreak() {
+  let streak = 0;
+  const d = new Date();
+  // Check if today has activity — if so count it, otherwise start from yesterday
+  const todayStr = todayKey();
+  const todayHasActivity = state.dailyLog[todayStr] && (state.dailyLog[todayStr].xp > 0 || state.dailyLog[todayStr].letters > 0 || state.dailyLog[todayStr].quizzes > 0);
+  if (!todayHasActivity) d.setDate(d.getDate() - 1);
+  while (true) {
+    const key = d.toISOString().slice(0,10);
+    const log = state.dailyLog[key];
+    if (log && (log.xp > 0 || log.letters > 0 || log.quizzes > 0)) {
+      streak++;
+      d.setDate(d.getDate() - 1);
+    } else break;
+  }
+  return streak;
+}
+
 function renderProgress() {
   const sc = SWAR.filter(s => state.learned['s_'+s.letter]).length;
   const vc = ALL_VYANJAN.filter(v => state.learned['v_'+v.letter]).length;
   const nc = NUMBERS.filter(n => state.learned['n_'+n.gu]).length;
   const container = document.getElementById('progressContent');
+  const streak = getStreak();
+  const todayLog = getTodayLog();
+
+  // Build 30-day calendar
+  const calendarDays = [];
+  for (let i = 29; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const key = d.toISOString().slice(0,10);
+    const log = state.dailyLog[key];
+    const active = log && (log.xp > 0 || log.letters > 0 || log.quizzes > 0);
+    const xp = log ? (log.xp || 0) : 0;
+    const level = xp === 0 ? 0 : xp < 20 ? 1 : xp < 50 ? 2 : 3;
+    const dayLabel = d.toLocaleDateString('en-US', { weekday:'short' }).charAt(0);
+    const dateNum = d.getDate();
+    const isToday = key === todayKey();
+    calendarDays.push({ key, active, level, dayLabel, dateNum, isToday, log });
+  }
+
+  // Build last 7 days detail
+  const weekDays = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const key = d.toISOString().slice(0,10);
+    const log = state.dailyLog[key] || { xp:0, letters:0, quizzes:0 };
+    const label = d.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
+    weekDays.push({ label, ...log });
+  }
+  const maxXP = Math.max(1, ...weekDays.map(d => d.xp || 0));
+
   container.innerHTML = `
+    <!-- Streak & Today -->
+    <div class="daily-tracker-top">
+      <div class="streak-card">
+        <div class="streak-flame">${streak > 0 ? '🔥' : '❄️'}</div>
+        <div class="streak-num">${streak}</div>
+        <div class="streak-label">${streak === 1 ? 'Day' : 'Days'} Streak</div>
+      </div>
+      <div class="today-stats">
+        <h3>📅 Today's Activity</h3>
+        <div class="today-stats-grid">
+          <div class="today-stat"><span class="ts-value">${todayLog.xp || 0}</span><span class="ts-label">XP Earned</span></div>
+          <div class="today-stat"><span class="ts-value">${todayLog.letters || 0}</span><span class="ts-label">Letters</span></div>
+          <div class="today-stat"><span class="ts-value">${todayLog.quizzes || 0}</span><span class="ts-label">Quizzes</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30-Day Calendar -->
+    <div class="calendar-section">
+      <h3>📆 Last 30 Days</h3>
+      <div class="activity-calendar">${calendarDays.map(d => `
+        <div class="cal-day level-${d.level} ${d.isToday?'today':''}" title="${d.key}: ${d.log ? (d.log.xp||0)+' XP' : 'No activity'}">
+          <div class="cal-date">${d.dateNum}</div>
+        </div>`).join('')}
+      </div>
+      <div class="cal-legend">
+        <span>Less</span>
+        <div class="cal-day-sm level-0"></div>
+        <div class="cal-day-sm level-1"></div>
+        <div class="cal-day-sm level-2"></div>
+        <div class="cal-day-sm level-3"></div>
+        <span>More</span>
+      </div>
+    </div>
+
+    <!-- Weekly Bar Chart -->
+    <div class="weekly-section">
+      <h3>📊 This Week's XP</h3>
+      <div class="weekly-chart">${weekDays.map(d => `
+        <div class="week-bar-col">
+          <div class="week-bar-val">${d.xp || 0}</div>
+          <div class="week-bar-track"><div class="week-bar-fill" style="height:${Math.max(4, ((d.xp||0)/maxXP)*100)}%"></div></div>
+          <div class="week-bar-label">${d.label.split(',')[0]}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+
+    <!-- Overall Stats -->
     <div class="progress-stats">
       <div class="stat-card"><div class="stat-value" style="color:var(--saffron)">${sc}/13</div><div class="stat-label">Vowels Learned</div></div>
       <div class="stat-card"><div class="stat-value" style="color:var(--purple)">${vc}/36</div><div class="stat-label">Consonants Learned</div></div>
@@ -431,10 +540,12 @@ function resetAllProgress() {
     localStorage.removeItem('gu_xp');
     localStorage.removeItem('gu_achievements');
     localStorage.removeItem('gu_quizCount');
+    localStorage.removeItem('gu_dailyLog');
     state.learned = {};
     state.xp = 0;
     state.achievements = [];
     state.quizCount = 0;
+    state.dailyLog = {};
     updateXPBar();
     updateBadges();
     overlay.classList.remove('visible');
