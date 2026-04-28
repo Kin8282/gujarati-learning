@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ગુજરાતી શીખો - Learn Gujarati</title>
+    <meta name="description" content="Interactive Gujarati learning app for kids - Learn alphabets, vowels, consonants, numbers and words step by step">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@300;400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Floating decorative elements -->
+        <div class="floating-decor" aria-hidden="true">
+            <span class="float-emoji" style="--delay:0s;--x:5%;--y:15%">🌸</span>
+            <span class="float-emoji" style="--delay:2s;--x:90%;--y:10%">⭐</span>
+            <span class="float-emoji" style="--delay:4s;--x:85%;--y:75%">🎨</span>
+            <span class="float-emoji" style="--delay:1s;--x:10%;--y:80%">📚</span>
+            <span class="float-emoji" style="--delay:3s;--x:50%;--y:5%">🦚</span>
+            <span class="float-emoji" style="--delay:5s;--x:15%;--y:45%">🪷</span>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <span class="logo-icon">📖</span>
+                    <h1 class="logo-text">ગુજરાતી<span>શીખો</span></h1>
+                </div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item active" data-view="home">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-label">Home</span>
+                </li>
+                <li class="nav-item" data-view="swar">
+                    <span class="nav-icon">🔤</span>
+                    <span class="nav-label">સ્વર (Vowels)</span>
+                    <span class="nav-badge" id="swarBadge">0/13</span>
+                </li>
+                <li class="nav-item" data-view="vyanjan">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-label">વ્યંજન (Consonants)</span>
+                    <span class="nav-badge" id="vyanjanBadge">0/36</span>
+                </li>
+                <li class="nav-item" data-view="numbers">
+                    <span class="nav-icon">🔢</span>
+                    <span class="nav-label">અંક (Numbers)</span>
+                    <span class="nav-badge" id="numbersBadge">0/10</span>
+                </li>
+                <li class="nav-item" data-view="words">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-label">શબ્દો (Words)</span>
+                </li>
+                <li class="nav-item" data-view="reading">
+                    <span class="nav-icon">📖</span>
+                    <span class="nav-label">વાંચન (Reading)</span>
+                </li>
+                <li class="nav-item" data-view="quiz">
+                    <span class="nav-icon">🎮</span>
+                    <span class="nav-label">રમત (Quiz)</span>
+                </li>
+                <li class="nav-item" data-view="progress">
+                    <span class="nav-icon">🏆</span>
+                    <span class="nav-label">Progress</span>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="xp-bar-container">
+                    <div class="xp-label">⭐ Level <span id="levelNum">1</span></div>
+                    <div class="xp-bar">
+                        <div class="xp-fill" id="xpFill" style="width: 0%"></div>
+                    </div>
+                    <div class="xp-text"><span id="xpCurrent">0</span> / <span id="xpMax">100</span> XP</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Header -->
+        <header id="mobileHeader">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <h1 class="mobile-title">ગુજરાતી શીખો</h1>
+            <div class="mobile-xp">⭐ Lv.<span id="mobileLevelNum">1</span></div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <!-- Home View -->
+            <section id="homeView" class="view active">
+                <div class="home-hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="hero-wave">👋</span>
+                            <span class="hero-gu">નમસ્તે!</span>
+                            <span class="hero-en">Let's Learn Gujarati</span>
+                        </h1>
+                        <p class="hero-subtitle">An interactive journey through the beautiful Gujarati script — one letter at a time!</p>
+                    </div>
+                    <div class="learning-path">
+                        <h2 class="section-title">🗺️ Your Learning Path</h2>
+                        <div class="path-cards">
+                            <div class="path-card" data-target="swar" style="--accent: #FF6B35">
+                                <div class="path-card-icon">અ આ</div>
+                                <h3>Step 1: સ્વર</h3>
+                                <p>Learn 13 Vowels</p>
+                                <div class="path-progress"><div class="path-progress-fill" id="swarProgress"></div></div>
+                            </div>
+                            <div class="path-connector">→</div>
+                            <div class="path-card" data-target="vyanjan" style="--accent: #7B2D8E">
+                                <div class="path-card-icon">ક ખ</div>
+                                <h3>Step 2: વ્યંજન</h3>
+                                <p>Learn 36 Consonants</p>
+                                <div class="path-progress"><div class="path-progress-fill" id="vyanjanProgress"></div></div>
+                            </div>
+                            <div class="path-connector">→</div>
+                            <div class="path-card" data-target="numbers" style="--accent: #00B4D8">
+                                <div class="path-card-icon">૧ ૨</div>
+                                <h3>Step 3: અંક</h3>
+                                <p>Learn Numbers 0-9</p>
+                                <div class="path-progress"><div class="path-progress-fill" id="numbersProgress"></div></div>
+                            </div>
+                            <div class="path-connector">→</div>
+                            <div class="path-card" data-target="words" style="--accent: #06D6A0">
+                                <div class="path-card-icon">📝</div>
+                                <h3>Step 4: શબ્દો</h3>
+                                <p>Learn Words</p>
+                                <div class="path-progress"><div class="path-progress-fill" id="wordsProgress"></div></div>
+                            </div>
+                            <div class="path-connector">→</div>
+                            <div class="path-card" data-target="reading" style="--accent: #EF476F">
+                                <div class="path-card-icon">📖</div>
+                                <h3>Step 5: વાંચન</h3>
+                                <p>Read Words & Sentences</p>
+                                <div class="path-progress"><div class="path-progress-fill" id="readingProgress"></div></div>
+                            </div>
+                            <div class="path-connector">→</div>
+                            <div class="path-card" data-target="quiz" style="--accent: #FFD166">
+                                <div class="path-card-icon">🎮</div>
+                                <h3>Step 6: રમત</h3>
+                                <p>Test Your Knowledge!</p>
+                                <div class="path-progress"><div class="path-progress-fill" id="quizProgress"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Swar (Vowels) View -->
+            <section id="swarView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">🔤</span> સ્વર — Vowels</h2>
+                    <p class="view-desc">Gujarati has 13 vowels. Click on each letter to learn its pronunciation!</p>
+                    <div class="view-mode-toggle">
+                        <button class="mode-btn active" data-mode="learn" id="swarLearnBtn">📖 Learn</button>
+                        <button class="mode-btn" data-mode="grid" id="swarGridBtn">📋 All Vowels</button>
+                    </div>
+                </div>
+                <div id="swarContent" class="letter-content"></div>
+            </section>
+
+            <!-- Vyanjan (Consonants) View -->
+            <section id="vyanjanView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">📝</span> વ્યંજન — Consonants</h2>
+                    <p class="view-desc">36 consonants grouped by their sound families. Master each group!</p>
+                    <div class="view-mode-toggle">
+                        <button class="mode-btn active" data-mode="learn" id="vyanjanLearnBtn">📖 Learn</button>
+                        <button class="mode-btn" data-mode="grid" id="vyanjanGridBtn">📋 All Consonants</button>
+                    </div>
+                </div>
+                <div id="vyanjanContent" class="letter-content"></div>
+            </section>
+
+            <!-- Numbers View -->
+            <section id="numbersView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">🔢</span> અંક — Numbers</h2>
+                    <p class="view-desc">Learn Gujarati numbers from 0 to 9!</p>
+                </div>
+                <div id="numbersContent" class="letter-content"></div>
+            </section>
+
+            <!-- Words View -->
+            <section id="wordsView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">💬</span> શબ્દો — Words</h2>
+                    <p class="view-desc">Learn everyday Gujarati words organized by category!</p>
+                    <div class="category-tabs" id="wordCategoryTabs"></div>
+                </div>
+                <div id="wordsContent" class="letter-content"></div>
+            </section>
+
+            <!-- Reading View -->
+            <section id="readingView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">📖</span> વાંચન — Reading</h2>
+                    <p class="view-desc">Practice reading Gujarati words and simple sentences!</p>
+                </div>
+                <div id="readingContent" class="letter-content"></div>
+            </section>
+
+            <!-- Quiz View -->
+            <section id="quizView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">🎮</span> રમત — Quiz Time!</h2>
+                    <p class="view-desc">Test what you've learned! Choose a quiz type below.</p>
+                </div>
+                <div id="quizContent" class="quiz-content"></div>
+            </section>
+
+            <!-- Progress View -->
+            <section id="progressView" class="view">
+                <div class="view-header">
+                    <h2 class="view-title"><span class="view-icon">🏆</span> Progress & Achievements</h2>
+                    <p class="view-desc">See how far you've come on your Gujarati learning journey!</p>
+                </div>
+                <div id="progressContent" class="progress-content"></div>
+            </section>
+        </main>
+
+        <!-- Confetti canvas -->
+        <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+        <!-- Toast container -->
+        <div id="toastContainer" class="toast-container"></div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
