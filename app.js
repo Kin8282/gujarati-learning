@@ -63,13 +63,13 @@ function updateBadges() {
   const nc = NUMBERS.filter(n => state.learned['n_'+n.gu]).length;
   document.getElementById('swarBadge').textContent = sc+'/13';
   document.getElementById('vyanjanBadge').textContent = vc+'/36';
-  document.getElementById('numbersBadge').textContent = nc+'/10';
+  document.getElementById('numbersBadge').textContent = nc+'/51';
   const sp = document.getElementById('swarProgress');
   const vp = document.getElementById('vyanjanProgress');
   const np = document.getElementById('numbersProgress');
   if (sp) sp.style.width = (sc/13*100)+'%';
   if (vp) vp.style.width = (vc/36*100)+'%';
-  if (np) np.style.width = (nc/10*100)+'%';
+  if (np) np.style.width = (nc/51*100)+'%';
 }
 function showToast(msg, type='success') {
   const c = document.getElementById('toastContainer');
@@ -500,7 +500,7 @@ function renderProgress() {
     <div class="progress-stats">
       <div class="stat-card"><div class="stat-value" style="color:var(--saffron)">${sc}/13</div><div class="stat-label">Vowels Learned</div></div>
       <div class="stat-card"><div class="stat-value" style="color:var(--purple)">${vc}/36</div><div class="stat-label">Consonants Learned</div></div>
-      <div class="stat-card"><div class="stat-value" style="color:var(--teal)">${nc}/10</div><div class="stat-label">Numbers Learned</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--teal)">${nc}/51</div><div class="stat-label">Numbers Learned</div></div>
       <div class="stat-card"><div class="stat-value" style="color:var(--gold)">Lv.${getLevel()}</div><div class="stat-label">${state.xp} Total XP</div></div>
     </div>
     <h3 style="text-align:center;margin-bottom:16px">🏆 Achievements</h3>
