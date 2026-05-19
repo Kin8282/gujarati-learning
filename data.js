@@ -1,17 +1,19 @@
+// Vowels — transliteration aligned with the BAPS "Akshar Gujarati Learner 2"
+// Speaking Guide (e.g. એ = 'ae', ઓ = 'o', અં = 'am', અઃ = 'aha').
 const SWAR = [
-  { letter:'અ', trans:'a', word:'અનાર', meaning:'Pomegranate', emoji:'🍎' },
-  { letter:'આ', trans:'aa', word:'આમ', meaning:'Mango', emoji:'🥭' },
-  { letter:'ઇ', trans:'i', word:'ઇમારત', meaning:'Building', emoji:'🏢' },
-  { letter:'ઈ', trans:'ee', word:'ઈંટ', meaning:'Brick', emoji:'🧱' },
-  { letter:'ઉ', trans:'u', word:'ઉંદર', meaning:'Mouse', emoji:'🐭' },
-  { letter:'ઊ', trans:'oo', word:'ઊન', meaning:'Wool', emoji:'🧶' },
-  { letter:'ઋ', trans:'ru', word:'ઋષિ', meaning:'Sage', emoji:'🧘' },
-  { letter:'એ', trans:'e', word:'એલચી', meaning:'Cardamom', emoji:'🌿' },
-  { letter:'ઐ', trans:'ai', word:'ઐનક', meaning:'Glasses', emoji:'👓' },
-  { letter:'ઓ', trans:'o', word:'ઓરડો', meaning:'Room', emoji:'🚪' },
-  { letter:'ઔ', trans:'au', word:'ઔષધ', meaning:'Medicine', emoji:'💊' },
-  { letter:'અં', trans:'am', word:'અંગૂઠો', meaning:'Thumb', emoji:'👍' },
-  { letter:'અઃ', trans:'ah', word:'અઃ', meaning:'(Visarga)', emoji:'🔔' }
+  { letter:'અ',  trans:'a',   word:'અક્ષર',    meaning:'Letter / Akshar', emoji:'🔤' },
+  { letter:'આ',  trans:'aa',  word:'આરતી',    meaning:'Arti (worship lamp)', emoji:'🪔' },
+  { letter:'ઇ',  trans:'i',   word:'ઇમારત',   meaning:'Building', emoji:'🏢' },
+  { letter:'ઈ',  trans:'ee',  word:'ઈશ્વર',   meaning:'God / Ishwar', emoji:'🙏' },
+  { letter:'ઉ',  trans:'u',   word:'ઉત્સવ',   meaning:'Festival / Utsav', emoji:'🎉' },
+  { letter:'ઊ',  trans:'oo',  word:'ઊન',      meaning:'Wool', emoji:'🧶' },
+  { letter:'ઋ',  trans:'ru',  word:'ઋષિ',     meaning:'Sage / Rishi', emoji:'🧘' },
+  { letter:'એ',  trans:'ae',  word:'એકાદશી', meaning:'Ekadashi (11th day)', emoji:'🌙' },
+  { letter:'ઐ',  trans:'ai',  word:'ઐરાવત',   meaning:'Airawat (white elephant)', emoji:'🐘' },
+  { letter:'ઓ',  trans:'o',   word:'ઓરડો',   meaning:'Room', emoji:'🚪' },
+  { letter:'ઔ',  trans:'au',  word:'ઔષધ',     meaning:'Medicine / Ausadh', emoji:'💊' },
+  { letter:'અં', trans:'am',  word:'મંત્ર',   meaning:'Mantra', emoji:'📿' },
+  { letter:'અઃ', trans:'aha', word:'નમઃ',     meaning:'Namah (salutation)', emoji:'🔔' }
 ];
 
 const VYANJAN_GROUPS = [
@@ -185,6 +187,49 @@ const WORD_CATEGORIES = {
     { gu:'રિક્ષા', en:'Rickshaw', trans:'rikshaa', emoji:'🛺' },
     { gu:'જહાજ', en:'Ship', trans:'jahaaj', emoji:'🚢' },
     { gu:'હોડી', en:'Boat', trans:'hodi', emoji:'⛵' }
+  ],
+  // Vowel-lesson groups from "Akshar Gujarati Learner 2" (BAPS)
+  'પાઠ ૨ – આ (Vowel આ)': [
+    { gu:'કાન',   en:'Ear',     trans:'KaNa',   emoji:'👂' },
+    { gu:'કામ',   en:'Work',    trans:'KaMa',   emoji:'💼' },
+    { gu:'મકાન',  en:'Building',trans:'MaKaNa', emoji:'🏠' },
+    { gu:'મકાઈ',  en:'Corn',    trans:'MaKaEe', emoji:'🌽' },
+    { gu:'કાગળ',  en:'Paper',   trans:'KaGaLa', emoji:'📄' },
+    { gu:'ઘાસ',   en:'Grass',   trans:'GhaSa',  emoji:'🌿' },
+    { gu:'ગાય',   en:'Cow',     trans:'GaYa',   emoji:'🐄' },
+    { gu:'ગામ',   en:'Village', trans:'GaMa',   emoji:'🏘️' },
+    { gu:'ચા',    en:'Tea',     trans:'CHa',    emoji:'☕' },
+    { gu:'ચાર',   en:'Four',    trans:'CHaRa',  emoji:'4️⃣' },
+    { gu:'છાશ',   en:'Buttermilk', trans:'CHHaSHa', emoji:'🥛' },
+    { gu:'છાત્ર', en:'Student', trans:'CHHaTRa', emoji:'🧑‍🎓' }
+  ],
+  'પાઠ ૩ – એ (Vowel એ)': [
+    { gu:'એક',    en:'One',     trans:'EKa',    emoji:'1️⃣' },
+    { gu:'એટમ',   en:'Atom',    trans:'ETaMa',  emoji:'⚛️' },
+    { gu:'કેક',   en:'Cake',    trans:'KeKa',   emoji:'🎂' },
+    { gu:'કેશ',   en:'Hair',    trans:'KeSHa',  emoji:'💇' },
+    { gu:'ખેલ',   en:'Play',    trans:'KHeLa',  emoji:'🎮' },
+    { gu:'ખેતર',  en:'Farm',    trans:'KHeTaRa', emoji:'🌾' },
+    { gu:'ગેસ',   en:'Gas',     trans:'GeSa',   emoji:'⛽' },
+    { gu:'દેશ',   en:'Country', trans:'DeSHa',  emoji:'🌍' },
+    { gu:'નેત્ર', en:'Eyes',    trans:'NeTRa',  emoji:'👁️' },
+    { gu:'તેલ',   en:'Oil',     trans:'TeLa',   emoji:'🫒' },
+    { gu:'સફેદ', en:'White',   trans:'SaFeDa', emoji:'⚪' },
+    { gu:'ગણેશ', en:'Ganesh',  trans:'GaNeSHa', emoji:'🐘' }
+  ],
+  'પાઠ ૧૦ – ઓ (Vowel ઓ)': [
+    { gu:'કાગડો', en:'Crow',    trans:'KaGaDo', emoji:'🐦‍⬛' },
+    { gu:'ઘોડો',  en:'Horse',   trans:'GhoDo',  emoji:'🐴' },
+    { gu:'મોર',   en:'Peacock', trans:'MoRa',   emoji:'🦚' },
+    { gu:'ચોર',   en:'Thief',   trans:'CHoRa',  emoji:'🥷' },
+    { gu:'ડોલ',   en:'Bucket',  trans:'DoLa',   emoji:'🪣' },
+    { gu:'ઢોલ',   en:'Drum',    trans:'DhoLa',  emoji:'🪘' },
+    { gu:'ટોપી',  en:'Cap',     trans:'ToPi',   emoji:'🧢' },
+    { gu:'તોપ',   en:'Cannon',  trans:'ToPa',   emoji:'💣' },
+    { gu:'પોલીસ', en:'Police',  trans:'PoLiSa', emoji:'👮' },
+    { gu:'મહિનો', en:'Month',   trans:'MaHiNo', emoji:'📅' },
+    { gu:'દરિયો', en:'Sea',     trans:'DaRiYo', emoji:'🌊' },
+    { gu:'રૂપિયો',en:'Rupee',   trans:'RuPiYo', emoji:'💰' }
   ]
 };
 
@@ -404,7 +449,54 @@ const ALL_READING_WORDS = [
   { gu:'ચિત્ર', en:'Picture', trans:'chitra', emoji:'🖼️', diff:3 },
   { gu:'રંગ', en:'Color', trans:'rang', emoji:'🎨', diff:3 },
   { gu:'વાર્તા', en:'Story', trans:'vaartaa', emoji:'📖', diff:3 },
-  { gu:'કવિતા', en:'Poem', trans:'kavitaa', emoji:'📝', diff:3 }
+  { gu:'કવિતા', en:'Poem', trans:'kavitaa', emoji:'📝', diff:3 },
+  // Words sourced from Akshar Gujarati Learner 2 (BAPS, 2003).
+  // Lesson 2 — vowel આ
+  { gu:'કાન',    en:'Ear',          trans:'KaNa',     emoji:'👂', diff:1 },
+  { gu:'કામ',    en:'Work',         trans:'KaMa',     emoji:'💼', diff:1 },
+  { gu:'મકાન',   en:'Building',     trans:'MaKaNa',   emoji:'🏠', diff:2 },
+  { gu:'મકાઈ',   en:'Corn',         trans:'MaKaEe',   emoji:'🌽', diff:2 },
+  { gu:'કાગળ',   en:'Paper',        trans:'KaGaLa',   emoji:'📄', diff:2 },
+  { gu:'ખાટ',    en:'Cot',          trans:'KhaTa',    emoji:'🛏️', diff:1 },
+  { gu:'ખાતર',   en:'Manure',       trans:'KhaTaRa',  emoji:'🌱', diff:2 },
+  { gu:'વખાણ',   en:'Praise',       trans:'VaKHaNa',  emoji:'👏', diff:2 },
+  { gu:'ઘા',     en:'Wound',        trans:'Gha',      emoji:'🩹', diff:1 },
+  { gu:'ઘાટ',    en:'River bank',   trans:'GhaTa',    emoji:'🛕', diff:1 },
+  { gu:'આચાર',   en:'Conduct',      trans:'AaCHaRa',  emoji:'🧘', diff:2 },
+  { gu:'ચામર',   en:'Fly-whisk',    trans:'CHaMaRa',  emoji:'🪶', diff:2 },
+  { gu:'છાય',    en:'Shadow',       trans:'CHHaYa',   emoji:'☂️', diff:2 },
+  { gu:'છાપ',    en:'Print',        trans:'CHHaPa',   emoji:'🖨️', diff:1 },
+  { gu:'છાલ',    en:'Peel',         trans:'CHHaLa',   emoji:'🍌', diff:1 },
+  // Lesson 3 — vowel એ
+  { gu:'એક',     en:'One',          trans:'EKa',      emoji:'1️⃣', diff:1 },
+  { gu:'એટમ',    en:'Atom',         trans:'ETaMa',    emoji:'⚛️', diff:2 },
+  { gu:'કેમ',    en:'How',          trans:'KeMa',     emoji:'❓', diff:1 },
+  { gu:'કેડ',    en:'Waist',        trans:'KeDa',     emoji:'🧍', diff:1 },
+  { gu:'કેશ',    en:'Hair',         trans:'KeSHa',    emoji:'💇', diff:1 },
+  { gu:'કેક',    en:'Cake',         trans:'KeKa',     emoji:'🎂', diff:1 },
+  { gu:'ખેલ',    en:'Play',         trans:'KheLa',    emoji:'🎮', diff:1 },
+  { gu:'ખેવટ',   en:'Helmsman',     trans:'KheVaTa',  emoji:'⛵', diff:2 },
+  { gu:'ખેતર',   en:'Farm',         trans:'KheTaRa',  emoji:'🌾', diff:2 },
+  { gu:'ગેલન',   en:'Gallon',       trans:'GeLaNa',   emoji:'🛢️', diff:2 },
+  { gu:'ગેરહાજર',en:'Absent',       trans:'GeRaHaJaRa', emoji:'🚫', diff:3 },
+  { gu:'ગેસ',    en:'Gas',          trans:'GeSa',     emoji:'⛽', diff:1 },
+  { gu:'નેત્ર',  en:'Eyes',         trans:'NeTRa',    emoji:'👁️', diff:2 },
+  // Lesson 10 — vowel ઓ
+  { gu:'કાગડો',  en:'Crow',         trans:'KaGaDo',   emoji:'🐦‍⬛', diff:2 },
+  { gu:'ઘોડો',   en:'Horse',        trans:'GhoDo',    emoji:'🐴', diff:2 },
+  { gu:'ડોલ',    en:'Bucket',       trans:'DoLa',     emoji:'🪣', diff:1 },
+  { gu:'ઢોલ',    en:'Drum',         trans:'DhoLa',    emoji:'🪘', diff:1 },
+  { gu:'ટોપી',   en:'Cap',          trans:'ToPi',     emoji:'🧢', diff:2 },
+  { gu:'તોપ',    en:'Cannon',       trans:'ToPa',     emoji:'💣', diff:1 },
+  { gu:'મહિનો',  en:'Month',        trans:'MaHiNo',   emoji:'📅', diff:2 },
+  { gu:'નોકરી',  en:'Job',          trans:'NoKaRi',   emoji:'💼', diff:2 },
+  { gu:'દરિયો',  en:'Sea',          trans:'DaRiYo',   emoji:'🌊', diff:2 },
+  { gu:'રૂપિયો', en:'Rupee',        trans:'RuPiYo',   emoji:'💰', diff:2 },
+  { gu:'મોક્ષ',  en:'Liberation',   trans:'MokSHa',   emoji:'🕊️', diff:3 },
+  { gu:'અરીસો',  en:'Mirror',       trans:'AaRiSo',   emoji:'🪞', diff:2 },
+  { gu:'ભરોસો',  en:'Trust',        trans:'BhaRoSo',  emoji:'🤝', diff:2 },
+  { gu:'હોશિયાર',en:'Clever',       trans:'HoSHiYaRa', emoji:'🧠', diff:3 },
+  { gu:'ઈશારો',  en:'Gesture',      trans:'IShaRo',   emoji:'👉', diff:2 }
 ];
 
 const ALL_SENTENCES = [
@@ -627,7 +719,40 @@ const ALL_SENTENCES = [
   { gu:'એક કલાકમાં સાઠ મિનિટ હોય છે.', trans:'Ek kalaak-maa saath minute hoy chhe.', en:'There are sixty minutes in an hour.', set:20 },
   { gu:'આજે તારીખ કેટલી છે?', trans:'Aaje taarikh ketli chhe?', en:'What is today date?', set:20 },
   { gu:'ગઈ કાલે ખૂબ મજા આવી.', trans:'Gai kaale khoob majaa aavi.', en:'Yesterday was a lot of fun.', set:20 },
-  { gu:'આવતી કાલે પરીક્ષા છે.', trans:'Aavti kaale parikshaa chhe.', en:'The exam is tomorrow.', set:20 }
+  { gu:'આવતી કાલે પરીક્ષા છે.', trans:'Aavti kaale parikshaa chhe.', en:'The exam is tomorrow.', set:20 },
+  // Set 21 — Lesson 2 (vowel આ) sentences from Akshar Gujarati Learner 2
+  { gu:'કાનન, તારા કાન સાફ કર.', trans:'KaNaNa, TaRa KaNa SaFa KaRa.', en:'Kanan, clean your ears.', set:21 },
+  { gu:'કાગડો બધા કાળા કાળા.', trans:'KaGaDo BaDhaa KaaLa KaaLa.', en:'All crows are black, very black.', set:21 },
+  { gu:'તારા, ખાટા ફળ ન ખા.', trans:'TaRa, KhaTa FaLa Na Kha.', en:'Tara, do not eat sour fruits.', set:21 },
+  { gu:'ભાઈ, ઘાસ કાપ.', trans:'BHaI, GhaSa KaPa.', en:'Brother, cut the grass.', set:21 },
+  { gu:'ઘાટ પર નહાવા જા.', trans:'GhaTa PaRa NaHaVa Ja.', en:'Go to the river bank for a bath.', set:21 },
+  { gu:'બા, ચા લાવ.', trans:'Ba, CHa Lava.', en:'Mother, bring tea.', set:21 },
+  { gu:'આચાર બરાબર રાખ.', trans:'AaCHaRa BaRaBaRa RaKHa.', en:'Keep your conduct good.', set:21 },
+  { gu:'કાજલ, ગાયન ગા.', trans:'KaJaLa, GaYaNa Ga.', en:'Kajal, sing a song.', set:21 },
+  { gu:'ગજર ખા, તાકાત વધાર.', trans:'GaJaRa Kha, TaKaTa VaDhaRa.', en:'Eat carrots, increase your strength.', set:21 },
+  { gu:'છાયા, છાલ ઉતાર.', trans:'CHHaYa, CHHaLa UTaRa.', en:'Chhaya, remove the peels.', set:21 },
+  // Set 22 — Lesson 3 (vowel એ) sentences
+  { gu:'કેતન, કેમ છે?', trans:'KeTaNa, KeMa CHHe?', en:'Ketan, how are you?', set:22 },
+  { gu:'તારા કેશ કાળા છે.', trans:'TaRa KeSHa KaLa CHHe.', en:'Your hair is black.', set:22 },
+  { gu:'નટ ખેલ કરે છે.', trans:'NaTa KheLa KaRe CHHe.', en:'The rope-dancer is doing his play.', set:22 },
+  { gu:'ખેવટ રામને લાવે છે.', trans:'KheVaTa RaMaNe LaVe CHHe.', en:'The boatman is bringing Ram.', set:22 },
+  { gu:'સવારે મા-બાપને પગે લાગ.', trans:'SaVaRe Ma-BaPaNe PaGe LaGa.', en:'Bow down to parents in the morning.', set:22 },
+  { gu:'એક ગેલન લાવ.', trans:'EKa GeLaNa LaVa.', en:'Bring one gallon.', set:22 },
+  { gu:'ગણેશને નમન કરો.', trans:'GaNeSHaNe NaMaNa KaRo.', en:'Bow down to Ganesh.', set:22 },
+  { gu:'સફેદ કેક ખા.', trans:'SaFeDa KeKa Kha.', en:'Eat the white cake.', set:22 },
+  { gu:'દેશ-પરદેશ ફરે.', trans:'DeSHa-PaRaDeSHa FaRe.', en:'Travel to many countries.', set:22 },
+  { gu:'ખેતરમાં અનાજ પાકે.', trans:'KheTaRa-Ma AaNaJa PaKe.', en:'Grain ripens in the field.', set:22 },
+  // Set 23 — Lesson 10 (vowel ઓ) sentences
+  { gu:'કાગડો ડોક વાળી પાણી પીવે છે.', trans:'KaGaDo DoKa VaaLi PaaNi PiVe CHHe.', en:'The crow bends its neck and drinks water.', set:23 },
+  { gu:'આરતી વખતે ઢોલ વાગે.', trans:'AaRaTi VaKhaTe DhoLa VaGe.', en:'Drums are played during arti.', set:23 },
+  { gu:'ભણો ગણો હોશિયાર બનો.', trans:'BHaNo GaNo HoSHiYaRa BaNo.', en:'Learn and become smart.', set:23 },
+  { gu:'આ તોપ લોઢાની છે.', trans:'Aa ToPa LoDhaaNi CHHe.', en:'This cannon is made of iron.', set:23 },
+  { gu:'સારા મિત્રોની સોબત રાખો.', trans:'SaRa MiTRoNi SoBaTa RaKHo.', en:'Keep company of good friends.', set:23 },
+  { gu:'દૂધથી શરીરને પોષણ મળે.', trans:'DuDhaThi SHaRiRaNe PoSHaNa MaLe.', en:'The body gets nutrition from milk.', set:23 },
+  { gu:'જાજમ નીચેથી કચરો સાફ કરો.', trans:'JaJaMa NiCHeThi KaCHaRo SaFa KaRo.', en:'Clean the garbage under the carpet.', set:23 },
+  { gu:'ગોપાલ તબેથો લાવ.', trans:'GoPaLa TaBeTHo LaVa.', en:'Gopal, bring the spatula.', set:23 },
+  { gu:'જો જો, ચાલતાં ચાલતાં ઠોકર ન વાગે.', trans:'Jo Jo, CHaLaTaa CHaLaTaa ThoKaRa Na VaGe.', en:'Look out, do not stumble while walking.', set:23 },
+  { gu:'દુનિયા ગોળ છે.', trans:'DuNiYa GoLa CHHe.', en:'The world is round.', set:23 }
 ];
 
 // Daily rotation helper - deterministic shuffle based on day number
@@ -658,7 +783,8 @@ function getDailyWords() {
 }
 function getDailySentences() {
   const day = getDayNumber();
-  const setNum = (day % 20) + 1;
+  const totalSets = 23;
+  const setNum = (day % totalSets) + 1;
   const todaySet = ALL_SENTENCES.filter(s => s.set === setNum);
   const bonus = seededShuffle(ALL_SENTENCES.filter(s => s.set !== setNum), day).slice(0, 5);
   return { setNum, sentences: [...todaySet, ...bonus] };
@@ -670,7 +796,9 @@ const SENTENCE_SET_NAMES = {
   10: '💖 Emotions', 11: '🎉 Festivals', 12: '🛒 Shopping',
   13: '⚽ Sports & Games', 14: '🙏 Manners', 15: '🌿 Garden & Plants',
   16: '👷 Occupations', 17: '🎨 Colors', 18: '🔢 Counting',
-  19: '🌤️ Weather Sayings', 20: '🕐 Time & Days'
+  19: '🌤️ Weather Sayings', 20: '🕐 Time & Days',
+  21: '📖 Book Lesson 2 — Vowel આ', 22: '📖 Book Lesson 3 — Vowel એ',
+  23: '📖 Book Lesson 10 — Vowel ઓ'
 };
 
 /* =============================================================
@@ -748,7 +876,17 @@ const PRETEST_BANK = {
     { gu:'રૂપિયો', en:'Rupee',      options:['Rupee','Coin','Note','Price'] },
     { gu:'મોક્ષ',  en:'Liberation', options:['Liberation','Knowledge','Penance','Devotion'] },
     { gu:'હોળી',   en:'Holi',       options:['Holi','Diwali','Navratri','Rakhi'] },
-    { gu:'શિયાળો', en:'Winter',     options:['Winter','Summer','Monsoon','Spring'] }
+    { gu:'શિયાળો', en:'Winter',     options:['Winter','Summer','Monsoon','Spring'] },
+    // Book-sourced — Lessons 2, 3, 10
+    { gu:'કાન',    en:'Ear',         options:['Ear','Eye','Hair','Hand'] },
+    { gu:'મકાન',   en:'Building',    options:['Building','Corn','Paper','Cot'] },
+    { gu:'મકાઈ',   en:'Corn',        options:['Corn','Building','Cake','Cot'] },
+    { gu:'કાગળ',   en:'Paper',       options:['Paper','Pencil','Print','Page'] },
+    { gu:'ઘાસ',    en:'Grass',       options:['Grass','Wound','Tree','Leaf'] },
+    { gu:'કેશ',    en:'Hair',        options:['Hair','Cake','Cheek','Head'] },
+    { gu:'કેક',    en:'Cake',        options:['Cake','Case','Cap','Coat'] },
+    { gu:'ખેતર',   en:'Farm',        options:['Farm','Field','Forest','Garden'] },
+    { gu:'નેત્ર',  en:'Eyes',        options:['Eyes','Ears','Nose','Mouth'] }
   ],
 
   // Q4 — Translate a Gujarati sentence to English (multiple choice)
@@ -822,7 +960,36 @@ const PRETEST_BANK = {
         'The body gets nutrition from milk.',
         'The body gets strength from rice.',
         'The body needs sleep daily.',
-        'The body grows with exercise.'] }
+        'The body grows with exercise.'] },
+    // Book-sourced sentences
+    { gu:'કાનન, તારા કાન સાફ કર.',
+      en:'Kanan, clean your ears.',
+      options:[
+        'Kanan, clean your ears.',
+        'Kanan, wash your hands.',
+        'Kanan, brush your teeth.',
+        'Kanan, comb your hair.'] },
+    { gu:'બા, ચા લાવ.',
+      en:'Mother, bring tea.',
+      options:[
+        'Mother, bring tea.',
+        'Mother, bring water.',
+        'Mother, bring milk.',
+        'Mother, bring food.'] },
+    { gu:'કેતન, કેમ છે?',
+      en:'Ketan, how are you?',
+      options:[
+        'Ketan, how are you?',
+        'Ketan, where are you?',
+        'Ketan, who are you?',
+        'Ketan, what are you doing?'] },
+    { gu:'સવારે મા-બાપને પગે લાગ.',
+      en:'Bow down to parents in the morning.',
+      options:[
+        'Bow down to parents in the morning.',
+        'Eat breakfast with parents.',
+        'Play with parents in the evening.',
+        'Help parents with chores.'] }
   ],
 
   // Q5 — Translate an English sentence to Gujarati (multiple choice)

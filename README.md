@@ -111,20 +111,27 @@ gujarati-learning/
 - 🟡 **Medium** — Three-letter words: કમલ, પવન, ગગન, નગર...
 - 🟠 **Longer** — Everyday, family, nature & school words
 
-### Sentence Themes (200 total across 20 themed sets, 15 shown daily)
+### Sentence Themes (230 total across 23 themed sets, 15 shown daily)
 - 📗 Greetings, 📘 Daily Routine, 📙 Family & Home, 📕 Nature & Weather
 - 📒 School & Learning, 📓 Food & Kitchen, 📔 Travel, 🐾 Animals
 - 💖 Emotions, 🎉 Festivals, 🛒 Shopping, ⚽ Sports, 🙏 Manners
 - 🌿 Garden, 👷 Occupations, 🎨 Colors, 🔢 Counting, 🕐 Time & Days
+- 📖 Book Lessons 2, 3, 10 (vowels આ, એ, ઓ) — sourced directly from _Akshar Gujarati Learner 2_
 
 ### Pre-Test Question Bank
-- 20 Gujarati-word multiple-choice items
+- 29 Gujarati-word multiple-choice items
 - 16 consonant + vowel-matra translations (both directions)
 - 20 word-translation items
-- 10 Gujarati → English sentence items
+- 14 Gujarati → English sentence items
 - 10 English → Gujarati sentence items
 - 15 fill-in-the-blank items (numbers, days, times)
 - 5 match-the-column groups (Time, Animals, Seasons, Home, People)
+
+---
+
+## 📚 Source Material
+
+Curriculum and content are aligned with **_Akshar Gujarati Learner 2_** by Devendra C. Patel and Ashok P. Dave (BAPS, 2003) — a 113-page workbook organized by Gujarati vowels (lessons 2 / 3 / 10 → vowels આ / એ / ઓ). The Pre-Test format follows the BAPS Satsang Development Committee _"Level 2 Spring Term Pre-test"_ paper.
 
 ---
 
