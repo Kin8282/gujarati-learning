@@ -8,15 +8,31 @@ An interactive, gamified web app designed to teach kids the Gujarati language st
 
 ## ✨ Features
 
-### 🗺️ 6-Step Learning Path
+### 🗺️ 7-Step Learning Path
 | Step | Section | What You Learn |
 |------|---------|---------------|
 | 1 | **સ્વર (Vowels)** | 13 Gujarati vowels with pronunciation |
 | 2 | **વ્યંજન (Consonants)** | 36 consonants grouped by phonetic families |
-| 3 | **અંક (Numbers)** | Numbers 0–9 in Gujarati |
+| 3 | **અંક (Numbers)** | Numbers 0–50 in Gujarati |
 | 4 | **શબ્દો (Words)** | Everyday vocabulary — fruits, animals, colors, body, home |
 | 5 | **વાંચન (Reading)** | Word reading & sentence comprehension |
 | 6 | **રમત (Quiz)** | 5 quiz types to test knowledge |
+| 7 | **પરીક્ષા (Pre-Test)** | Full Level-2 Spring Term style practice paper |
+
+### 📝 Pre-Test Mode (Exam Practice)
+A randomized 7-section practice paper modeled after the BAPS Satsang Development Committee **"Level 2 Spring Term Pre-test"** and seeded with content from **Akshar Gujarati Learner-2, Lesson 10 (vowel ઓ)**.
+
+| # | Question Type | Example |
+|---|---------------|---------|
+| Q1 | Pick the correct Gujarati word | _"Mother"_ → મૈયા / પૈસા / મૌન / મૈત્રી |
+| Q2 | Translate consonants with vowel matras | થં ↔ tham, Zu ↔ ઝુ |
+| Q3 | Gujarati → English words | ઉધાર → Borrow |
+| Q4 | Gujarati → English sentences | કીર્તન પતંગ ઉડાડે છે → Kirtan is flying a kite |
+| Q5 | English → Gujarati sentences | "Give fruit to everyone" → બધાને ફળ આપો |
+| Q6 | Fill in the blanks | Twenty-Six → ૨૬ |
+| Q7 | Match the column | Friday ↔ શુક્રવાર, Week ↔ અઠવાડિયું |
+
+Every attempt builds a fresh shuffled paper from the question bank (96+ items), grades on submit with green/red highlights, and awards XP per correct answer. A perfect score triggers confetti and unlocks the `quiz_perfect` achievement.
 
 ### 📅 Daily Rotating Content
 - **Words and sentences change every day** so your child sees fresh content daily
@@ -90,18 +106,25 @@ gujarati-learning/
 
 ## 📝 Content Overview
 
-### Reading Words (64 total, 20 shown daily)
+### Reading Words (200+ total, 20 shown daily)
 - 🟢 **Easy** — Two-letter words: મા, બા, ઘર, જા, ના, હા...
 - 🟡 **Medium** — Three-letter words: કમલ, પવન, ગગન, નગર...
 - 🟠 **Longer** — Everyday, family, nature & school words
 
-### Sentence Themes (60 total, 15 shown daily)
-- 📗 Basics — "આ ગાય છે." (This is a cow)
-- 📘 Daily Life — "તમે કેમ છો?" (How are you?)
-- 📙 Family — "દાદા વાર્તા કહે છે." (Grandfather tells stories)
-- 📕 Nature — "વરસાદ પડે છે." (It is raining)
-- 📒 School — "શિક્ષક ભણાવે છે." (The teacher teaches)
-- 📓 Food & Fun — "કેરી મીઠી છે." (The mango is sweet)
+### Sentence Themes (200 total across 20 themed sets, 15 shown daily)
+- 📗 Greetings, 📘 Daily Routine, 📙 Family & Home, 📕 Nature & Weather
+- 📒 School & Learning, 📓 Food & Kitchen, 📔 Travel, 🐾 Animals
+- 💖 Emotions, 🎉 Festivals, 🛒 Shopping, ⚽ Sports, 🙏 Manners
+- 🌿 Garden, 👷 Occupations, 🎨 Colors, 🔢 Counting, 🕐 Time & Days
+
+### Pre-Test Question Bank
+- 20 Gujarati-word multiple-choice items
+- 16 consonant + vowel-matra translations (both directions)
+- 20 word-translation items
+- 10 Gujarati → English sentence items
+- 10 English → Gujarati sentence items
+- 15 fill-in-the-blank items (numbers, days, times)
+- 5 match-the-column groups (Time, Animals, Seasons, Home, People)
 
 ---
 
