@@ -672,3 +672,328 @@ const SENTENCE_SET_NAMES = {
   16: '👷 Occupations', 17: '🎨 Colors', 18: '🔢 Counting',
   19: '🌤️ Weather Sayings', 20: '🕐 Time & Days'
 };
+
+/* =============================================================
+   PRE-TEST BANK
+   Modeled after "Level 2 Spring Term Pre-test (2025-2026)" PDF
+   with extra content from Akshar Gujarati Learner-2, Lesson 10
+   (Vowel 'ઓ' — ો kaano-matra)
+   ============================================================= */
+const PRETEST_BANK = {
+  // Q1 — Select the correct Gujarati translation of an English word
+  // (4 choices; only 1 correct — others are visually similar)
+  wordChoice: [
+    { en:'Mother',     correct:'મૈયા',    options:['પૈસા','મૈયા','મૌન','મૈત્રી'] },
+    { en:'Grief',      correct:'શોક',    options:['શોખ','મોજ','શોક','હોઠ'] },
+    { en:'Color',      correct:'રંગ',    options:['યંત્ર','દાંત','બંધ','રંગ'] },
+    { en:'School',     correct:'શાળા',   options:['ચમચો','વિમાન','શાળા','દૈવત'] },
+    { en:'Horse',      correct:'ઘોડો',   options:['ઘોડો','ઘડો','થોડો','ધોધ'] },
+    { en:'Crow',       correct:'કાગડો',  options:['કાગડો','કૂતરો','કાચબો','કાગળ'] },
+    { en:'Peacock',    correct:'મોર',    options:['ભોર','જોર','મોર','ચોર'] },
+    { en:'Thief',      correct:'ચોર',    options:['ચોર','ચોખા','ચાર','ચોટ'] },
+    { en:'Garden',     correct:'બગીચો',  options:['બગીચો','બંગલો','બાળક','બારી'] },
+    { en:'Drum',       correct:'ઢોલ',    options:['ડોલ','ઢોલ','થોલ','ઢોર'] },
+    { en:'Bucket',     correct:'ડોલ',    options:['ડોલ','ઢોલ','ધોળ','થોલ'] },
+    { en:'Cannon',     correct:'તોપ',    options:['તોપ','તોલ','તોડ','તાપ'] },
+    { en:'Cap',        correct:'ટોપી',   options:['ટોપી','ટોપલી','ટોકરી','થાળી'] },
+    { en:'Police',     correct:'પોલીસ',  options:['પોલીસ','પોપટ','પોષણ','પોળ'] },
+    { en:'Holi',       correct:'હોળી',   options:['હોળી','હોઠ','હોટલ','હોવા'] },
+    { en:'Lips',       correct:'હોઠ',    options:['હોઠ','હાથ','હાડ','હોળી'] },
+    { en:'Mirror',     correct:'અરીસો',  options:['અરીસો','આરસ','ઇરાદો','અરજી'] },
+    { en:'Trust',      correct:'ભરોસો',  options:['ભરોસો','ભોળો','ભોગ','ભારો'] },
+    { en:'Liberation', correct:'મોક્ષ',  options:['મોક્ષ','મોચ','મોખ','મોટ'] },
+    { en:'Sixteen',    correct:'સોળ',    options:['સોળ','સત્તર','સાત','સોળમો'] }
+  ],
+
+  // Q2 — Consonant + vowel matra translation
+  //   direction 'guToRoman' shows Gujarati and asks for transliteration
+  //   direction 'romanToGu' shows roman and asks for Gujarati
+  consonants: [
+    { gu:'થં',  roman:'tham',  direction:'guToRoman', allRoman:['tham','than','thi','thu'] },
+    { gu:'ઝુ',  roman:'Zu',    direction:'romanToGu', allGu:['ઝુ','ઝૂ','જુ','ઝા'] },
+    { gu:'ષો',  roman:'sho',   direction:'guToRoman', allRoman:['sho','ṣo','sa','so'] },
+    { gu:'ક્ષી', roman:'Kshī', direction:'romanToGu', allGu:['ક્ષી','ક્ષિ','ક્ષ','ષી'] },
+    { gu:'વા',  roman:'vaa',   direction:'guToRoman', allRoman:['vaa','va','baa','vi'] },
+    { gu:'ટિ',  roman:'Ti',    direction:'romanToGu', allGu:['ટિ','ટી','તિ','ઢિ'] },
+    { gu:'બૈ',  roman:'Bai',   direction:'romanToGu', allGu:['બૈ','બા','બે','ભૈ'] },
+    { gu:'શ્રા', roman:'shrā', direction:'guToRoman', allRoman:['shrā','shra','sra','shrī'] },
+    { gu:'ઢૂ',  roman:'ḍhū',   direction:'guToRoman', allRoman:['ḍhū','dhu','ḍu','ḍhu'] },
+    { gu:'ક્ષૌ', roman:'Kshau',direction:'romanToGu', allGu:['ક્ષૌ','ક્ષો','ક્ષુ','ષૌ'] },
+    { gu:'કો',  roman:'ko',    direction:'guToRoman', allRoman:['ko','kā','ku','kī'] },
+    { gu:'ઘો',  roman:'gho',   direction:'romanToGu', allGu:['ઘો','ગો','ઘા','ઘૂ'] },
+    { gu:'ચો',  roman:'cho',   direction:'guToRoman', allRoman:['cho','chho','jo','cā'] },
+    { gu:'ઢો',  roman:'ḍho',   direction:'romanToGu', allGu:['ઢો','ડો','ધો','થો'] },
+    { gu:'ણો',  roman:'ṇo',    direction:'guToRoman', allRoman:['ṇo','no','na','ṇa'] },
+    { gu:'તો',  roman:'to',    direction:'romanToGu', allGu:['તો','ટો','થો','દો'] }
+  ],
+
+  // Q3 — Translate a Gujarati word to English
+  wordTranslate: [
+    { gu:'ઉધાર',   en:'Borrow',     options:['Borrow','Lend','Beggar','Buy'] },
+    { gu:'શિકાર',  en:'Hunting',    options:['Hunting','Sugar','Shape','Lesson'] },
+    { gu:'ગુલાબ',  en:'Rose',       options:['Rose','Lotus','Marigold','Jasmine'] },
+    { gu:'ગુણ',    en:'Quality',    options:['Quality','Game','Garden','Goodness'] },
+    { gu:'પૈસા',   en:'Money',      options:['Money','Mother','Peace','Foot'] },
+    { gu:'ઘોડો',   en:'Horse',      options:['Horse','Pot','House','Hour'] },
+    { gu:'કાગડો',  en:'Crow',       options:['Crow','Paper','Cuckoo','Pigeon'] },
+    { gu:'મોર',    en:'Peacock',    options:['Peacock','Parrot','Sparrow','Pigeon'] },
+    { gu:'બગીચો',  en:'Garden',     options:['Garden','Bungalow','Window','Building'] },
+    { gu:'ડોલ',    en:'Bucket',     options:['Bucket','Drum','Bowl','Bag'] },
+    { gu:'ઢોલ',    en:'Drum',       options:['Drum','Bucket','Bowl','Plate'] },
+    { gu:'ટોપી',   en:'Cap',        options:['Cap','Hat-Stand','Basket','Plate'] },
+    { gu:'ચોર',    en:'Thief',      options:['Thief','Soldier','King','Servant'] },
+    { gu:'મહિનો',  en:'Month',      options:['Month','Minute','Hour','Week'] },
+    { gu:'નોકરી',  en:'Job',        options:['Job','School','Friend','Rest'] },
+    { gu:'દરિયો',  en:'Sea',        options:['Sea','River','Pond','Well'] },
+    { gu:'રૂપિયો', en:'Rupee',      options:['Rupee','Coin','Note','Price'] },
+    { gu:'મોક્ષ',  en:'Liberation', options:['Liberation','Knowledge','Penance','Devotion'] },
+    { gu:'હોળી',   en:'Holi',       options:['Holi','Diwali','Navratri','Rakhi'] },
+    { gu:'શિયાળો', en:'Winter',     options:['Winter','Summer','Monsoon','Spring'] }
+  ],
+
+  // Q4 — Translate a Gujarati sentence to English (multiple choice)
+  guToEnSentence: [
+    { gu:'નૂતન, દીવાલ ઉપર થી કૂદ.',
+      en:'Nutan, jump down from the wall.',
+      options:[
+        'Nutan, jump down from the wall.',
+        'Nutan, climb up the wall.',
+        'Nutan, paint the wall.',
+        'Nutan, sit on the wall.'] },
+    { gu:'કીર્તન પતંગ ઉડાડે છે.',
+      en:'Kirtan is flying a kite.',
+      options:[
+        'Kirtan is flying a kite.',
+        'Kirtan is singing a song.',
+        'Kirtan is buying a kite.',
+        'Kirtan is breaking a kite.'] },
+    { gu:'પિતાજી, મારાથી ભૂલ થઈ.',
+      en:'Father, I made a mistake.',
+      options:[
+        'Father, I made a mistake.',
+        'Father, I forgot you.',
+        'Father, I am going home.',
+        'Father, I lost the book.'] },
+    { gu:'કાગડો ડોક વાળી પાણી પીવે છે.',
+      en:'The crow bends its neck and drinks water.',
+      options:[
+        'The crow bends its neck and drinks water.',
+        'The crow flies in the sky.',
+        'The crow eats the bread.',
+        'The crow sits on the wall.'] },
+    { gu:'આરતી વખતે ઢોલ વાગે.',
+      en:'Drums are played during arti.',
+      options:[
+        'Drums are played during arti.',
+        'Songs are sung in the morning.',
+        'Bells ring in the temple.',
+        'Conch is blown at sunset.'] },
+    { gu:'ભણો ગણો હોશિયાર બનો.',
+      en:'Learn and become smart.',
+      options:[
+        'Learn and become smart.',
+        'Play and become strong.',
+        'Sleep and become healthy.',
+        'Walk and become tall.'] },
+    { gu:'આ તોપ લોઢાની છે.',
+      en:'This cannon is made of iron.',
+      options:[
+        'This cannon is made of iron.',
+        'This drum is made of wood.',
+        'This pot is made of clay.',
+        'This box is made of paper.'] },
+    { gu:'સારા મિત્રોની સોબત રાખો.',
+      en:'Keep company of good friends.',
+      options:[
+        'Keep company of good friends.',
+        'Forget your old friends.',
+        'Make new enemies.',
+        'Travel with strangers.'] },
+    { gu:'ગોપાલ તબેથો લાવ.',
+      en:'Gopal, bring the spatula.',
+      options:[
+        'Gopal, bring the spatula.',
+        'Gopal, bring the pot.',
+        'Gopal, bring the book.',
+        'Gopal, bring the milk.'] },
+    { gu:'દૂધથી શરીરને પોષણ મળે.',
+      en:'The body gets nutrition from milk.',
+      options:[
+        'The body gets nutrition from milk.',
+        'The body gets strength from rice.',
+        'The body needs sleep daily.',
+        'The body grows with exercise.'] }
+  ],
+
+  // Q5 — Translate an English sentence to Gujarati (multiple choice)
+  enToGuSentence: [
+    { en:'My teacher is good.',
+      gu:'મારા શિક્ષક સારા છે.',
+      options:[
+        'મારા શિક્ષક સારા છે.',
+        'મારા પિતા સારા છે.',
+        'મારી શાળા સારી છે.',
+        'મારો મિત્ર સારો છે.'] },
+    { en:'Bow to your mother and father.',
+      gu:'માતા-પિતાને નમન કરો.',
+      options:[
+        'માતા-પિતાને નમન કરો.',
+        'મિત્રને નમન કરો.',
+        'ભગવાનને નમન કરો.',
+        'ગુરુને નમન કરો.'] },
+    { en:'Give fruit to everyone.',
+      gu:'બધાને ફળ આપો.',
+      options:[
+        'બધાને ફળ આપો.',
+        'બધાને પાણી આપો.',
+        'બધાને દૂધ આપો.',
+        'બધાને પુસ્તક આપો.'] },
+    { en:'The peacock is dancing.',
+      gu:'મોર નાચે છે.',
+      options:[
+        'મોર નાચે છે.',
+        'મોર ઊડે છે.',
+        'મોર ગાય છે.',
+        'મોર બેઠો છે.'] },
+    { en:'The bee is flying.',
+      gu:'ભમરો ઊડે છે.',
+      options:[
+        'ભમરો ઊડે છે.',
+        'ભમરો બેઠો છે.',
+        'ભમરો ગાય છે.',
+        'ભમરો રડે છે.'] },
+    { en:'God, rid me of all of my flaws.',
+      gu:'ભગવાન, મારા સઘળાં દોષ હરો.',
+      options:[
+        'ભગવાન, મારા સઘળાં દોષ હરો.',
+        'ભગવાન, મને શાંતિ આપો.',
+        'ભગવાન, મને જ્ઞાન આપો.',
+        'ભગવાન, મારી રક્ષા કરો.'] },
+    { en:'The world is round.',
+      gu:'દુનિયા ગોળ છે.',
+      options:[
+        'દુનિયા ગોળ છે.',
+        'દુનિયા મોટી છે.',
+        'દુનિયા સુંદર છે.',
+        'દુનિયા નાની છે.'] },
+    { en:'Speak the truth.',
+      gu:'સાચું બોલો.',
+      options:[
+        'સાચું બોલો.',
+        'ધીમે બોલો.',
+        'મીઠું બોલો.',
+        'ઓછું બોલો.'] },
+    { en:'Respect your elders.',
+      gu:'મોટાનું સન્માન કરો.',
+      options:[
+        'મોટાનું સન્માન કરો.',
+        'નાનાને મદદ કરો.',
+        'મિત્રને માફ કરો.',
+        'સહુનું ધ્યાન રાખો.'] },
+    { en:'It is raining today.',
+      gu:'આજે વરસાદ પડે છે.',
+      options:[
+        'આજે વરસાદ પડે છે.',
+        'આજે તડકો છે.',
+        'આજે ઠંડી છે.',
+        'આજે પવન છે.'] }
+  ],
+
+  // Q6 — Fill in the blanks (numbers / days / time of day)
+  fillBlank: [
+    { en:'Twenty-Six',   correct:'૨૬',     options:['૨૬','૨૨','૨૦'] },
+    { en:'Morning',      correct:'સવાર',   options:['રાત','દિવસ','સવાર'] },
+    { en:'Saturday',     correct:'શનિવાર', options:['સોમવાર','શનિવાર','રવિવાર'] },
+    { en:'Twenty-Nine',  correct:'૨૯',     options:['૨૯','૧૯','૯'] },
+    { en:'Monday',       correct:'સોમવાર', options:['સોમવાર','બુધવાર','ગુરુવાર'] },
+    { en:'Sunday',       correct:'રવિવાર', options:['રવિવાર','શુક્રવાર','મંગળવાર'] },
+    { en:'Night',        correct:'રાત',     options:['સવાર','રાત','સાંજ'] },
+    { en:'Evening',      correct:'સાંજ',   options:['સવાર','સાંજ','બપોર'] },
+    { en:'Afternoon',    correct:'બપોર',   options:['બપોર','સવાર','રાત'] },
+    { en:'Fifteen',      correct:'૧૫',     options:['૫','૧૫','૫૦'] },
+    { en:'Thirty',       correct:'૩૦',     options:['૩૦','૧૩','૩'] },
+    { en:'Fifty',        correct:'૫૦',     options:['૧૫','૫૦','૫'] },
+    { en:'Week',         correct:'અઠવાડિયું', options:['મહિનો','અઠવાડિયું','વર્ષ'] },
+    { en:'Hour',         correct:'કલાક',   options:['કલાક','મિનિટ','દિવસ'] },
+    { en:'Today',        correct:'આજે',    options:['આજે','કાલે','ગઈ કાલે'] }
+  ],
+
+  // Q7 — Match the columns (group of 5)
+  // Multiple groups so each attempt feels fresh
+  matchGroups: [
+    {
+      title: 'Time & Days',
+      pairs: [
+        { en:'Friday', gu:'શુક્રવાર' },
+        { en:'Week',   gu:'અઠવાડિયું' },
+        { en:'Night',  gu:'રાત' },
+        { en:'15',     gu:'પંદર' },
+        { en:'Hours',  gu:'કલાક' }
+      ]
+    },
+    {
+      title: 'Animals & Birds',
+      pairs: [
+        { en:'Horse',    gu:'ઘોડો' },
+        { en:'Crow',     gu:'કાગડો' },
+        { en:'Peacock',  gu:'મોર' },
+        { en:'Elephant', gu:'હાથી' },
+        { en:'Cow',      gu:'ગાય' }
+      ]
+    },
+    {
+      title: 'Seasons & Weather',
+      pairs: [
+        { en:'Winter',  gu:'શિયાળો' },
+        { en:'Summer',  gu:'ઉનાળો' },
+        { en:'Monsoon', gu:'ચોમાસું' },
+        { en:'Rain',    gu:'વરસાદ' },
+        { en:'Snow',    gu:'બરફ' }
+      ]
+    },
+    {
+      title: 'Home Objects',
+      pairs: [
+        { en:'Cap',     gu:'ટોપી' },
+        { en:'Bucket',  gu:'ડોલ' },
+        { en:'Drum',    gu:'ઢોલ' },
+        { en:'Lamp',    gu:'દીવો' },
+        { en:'Mirror',  gu:'અરીસો' }
+      ]
+    },
+    {
+      title: 'People & Family',
+      pairs: [
+        { en:'Mother',  gu:'મૈયા' },
+        { en:'Father',  gu:'પિતા' },
+        { en:'Friend',  gu:'મિત્ર' },
+        { en:'Teacher', gu:'શિક્ષક' },
+        { en:'Thief',   gu:'ચોર' }
+      ]
+    }
+  ]
+};
+
+// Helper: build a randomly-ordered Pre-Test paper (limit per question type)
+function buildPreTestPaper(opts = {}) {
+  const {
+    n1 = 4,   // Q1 word-choice
+    n2 = 5,   // Q2 consonants
+    n3 = 5,   // Q3 word translate
+    n4 = 3,   // Q4 gu->en sentence
+    n5 = 3,   // Q5 en->gu sentence
+    n6 = 5,   // Q6 fill-blank
+    n7 = 1,   // Q7 match groups
+    seed = Math.floor(Math.random() * 100000)
+  } = opts;
+  const pick = (arr, n, s) => seededShuffle(arr, s).slice(0, Math.min(n, arr.length));
+  return {
+    q1: pick(PRETEST_BANK.wordChoice,      n1, seed + 1),
+    q2: pick(PRETEST_BANK.consonants,      n2, seed + 2),
+    q3: pick(PRETEST_BANK.wordTranslate,   n3, seed + 3),
+    q4: pick(PRETEST_BANK.guToEnSentence,  n4, seed + 4),
+    q5: pick(PRETEST_BANK.enToGuSentence,  n5, seed + 5),
+    q6: pick(PRETEST_BANK.fillBlank,       n6, seed + 6),
+    q7: pick(PRETEST_BANK.matchGroups,     n7, seed + 7)
+  };
+}
