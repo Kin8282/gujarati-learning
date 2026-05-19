@@ -105,6 +105,7 @@ function switchView(viewName) {
   else if (viewName === 'numbers') renderNumbers();
   else if (viewName === 'words') renderWords();
   else if (viewName === 'reading') renderReading();
+  else if (viewName === 'book') renderBookLessons();
   else if (viewName === 'quiz') renderQuizMenu();
   else if (viewName === 'pretest') renderPreTestMenu();
   else if (viewName === 'progress') renderProgress();
@@ -661,6 +662,102 @@ function triggerConfetti() {
     else ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
   animate();
+}
+
+/* ===== Book Lessons (Akshar Gujarati Learner 2) ===== */
+let _currentLessonNum = 1;
+function renderBookLessons() {
+  const c = document.getElementById('bookContent');
+  const lesson = BOOK_LESSONS.find(l => l.num === _currentLessonNum) || BOOK_LESSONS[0];
+  const sidebar = BOOK_LESSONS.map(l => `
+    <button class="book-lesson-tab ${l.num===_currentLessonNum?'active':''}" data-num="${l.num}">
+      <span class="bl-num">${l.gu}</span>
+      <span class="bl-vowel">${l.vowel || '·'}</span>
+      <span class="bl-title">${l.title}</span>
+    </button>`).join('');
+
+  const wordsHtml = lesson.words.length ? `
+    <div class="book-section">
+      <h4 class="book-section-title">📝 Words <span class="bl-count">(${lesson.words.length})</span></h4>
+      <div class="book-words-grid">
+        ${lesson.words.map(w => `
+          <div class="book-word" data-text="${w.gu}">
+            <div class="bw-gu">${w.gu}</div>
+            <div class="bw-trans">${w.trans}</div>
+            <div class="bw-en">${w.en}</div>
+            <button class="bw-speak" data-text="${w.gu}">🔊</button>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  const sentencesHtml = lesson.sentences.length ? `
+    <div class="book-section">
+      <h4 class="book-section-title">💬 Sentences <span class="bl-count">(${lesson.sentences.length})</span></h4>
+      <div class="book-sentences-list">
+        ${lesson.sentences.map((s, i) => `
+          <div class="book-sentence" data-text="${s.gu}">
+            <div class="bs-num">${i+1}</div>
+            <div class="bs-body">
+              <div class="bs-gu">${s.gu}</div>
+              <div class="bs-trans">${s.trans}</div>
+              <div class="bs-en">${s.en}</div>
+            </div>
+            <button class="bs-speak" data-text="${s.gu}">🔊</button>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  const passagesHtml = (lesson.passages && lesson.passages.length) ? `
+    <div class="book-section">
+      <h4 class="book-section-title">📖 Reading Passages</h4>
+      ${lesson.passages.map(p => `
+        <div class="book-passage">
+          <h5 class="bp-title">${p.title}</h5>
+          <div class="bp-gu">${p.gu.split('\n').map(line => `<div>${line || '&nbsp;'}</div>`).join('')}</div>
+          <details class="bp-en-wrap">
+            <summary>Show English translation</summary>
+            <div class="bp-en">${p.en.split('\n').map(line => `<div>${line || '&nbsp;'}</div>`).join('')}</div>
+          </details>
+          <button class="bp-speak" data-text="${p.gu.replace(/\n/g, ' ').replace(/"/g, '&quot;')}">🔊 Listen</button>
+        </div>`).join('')}
+    </div>` : '';
+
+  const emptyHtml = (!lesson.words.length && !lesson.sentences.length && !(lesson.passages && lesson.passages.length)) ?
+    `<div class="book-empty">This lesson is a comprehensive review and is best practiced from the printed workbook.</div>` : '';
+
+  c.innerHTML = `
+    <div class="book-layout">
+      <div class="book-sidebar">${sidebar}</div>
+      <div class="book-main">
+        <div class="book-lesson-head">
+          <div class="book-lesson-vowel">${lesson.vowel || '📖'}</div>
+          <div>
+            <h3 class="book-lesson-title">${lesson.gu} — ${lesson.title}</h3>
+            <p class="book-lesson-intro">${lesson.intro || ''}</p>
+          </div>
+        </div>
+        ${wordsHtml}
+        ${sentencesHtml}
+        ${passagesHtml}
+        ${emptyHtml}
+      </div>
+    </div>`;
+
+  c.querySelectorAll('.book-lesson-tab').forEach(t => {
+    t.addEventListener('click', () => {
+      _currentLessonNum = parseInt(t.dataset.num, 10);
+      renderBookLessons();
+    });
+  });
+  c.querySelectorAll('.book-word').forEach(el => {
+    el.addEventListener('click', () => { speak(el.dataset.text); el.classList.add('pulse'); setTimeout(()=>el.classList.remove('pulse'),400); });
+  });
+  c.querySelectorAll('.book-sentence').forEach(el => {
+    el.addEventListener('click', () => speak(el.dataset.text));
+  });
+  c.querySelectorAll('.bw-speak, .bs-speak, .bp-speak').forEach(b => {
+    b.addEventListener('click', e => { e.stopPropagation(); speak(b.dataset.text); });
+  });
 }
 
 /* ===== Pre-Test ===== */

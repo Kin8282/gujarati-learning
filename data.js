@@ -802,6 +802,419 @@ const SENTENCE_SET_NAMES = {
 };
 
 /* =============================================================
+   BOOK LESSONS — full curriculum from "Akshar Gujarati Learner 2"
+   (BAPS, Devendra C. Patel & Ashok P. Dave, 2003), 113 pages.
+   Each lesson focuses on one vowel and combines its matra with
+   consonants. Vocabulary, sentences and reading passages here are
+   sourced page-by-page from the workbook.
+   ============================================================= */
+const BOOK_LESSONS = [
+  {
+    num: 1, gu: 'પાઠ ૧', title: 'Recap of Book One', vowel: null,
+    intro: 'Review words and sentences from Book One — single-letter combinations.',
+    words: [
+      { gu:'હંસ', en:'Swan', trans:'HaMSa' },
+      { gu:'સરસ', en:'Nice', trans:'SaRaSa' },
+      { gu:'રમત', en:'Game', trans:'RaMaTa' },
+      { gu:'નમન', en:'Bow', trans:'NaMaNa' },
+      { gu:'પવન', en:'Wind', trans:'PaVaNa' },
+      { gu:'ભજન', en:'Devotional song', trans:'BHaJaNa' },
+      { gu:'રક્ષણ', en:'Protection', trans:'RaKSHaNa' },
+      { gu:'નખ', en:'Nail', trans:'NaKHa' },
+      { gu:'ઉપર', en:'Above', trans:'UPaRa' },
+      { gu:'ધન', en:'Wealth', trans:'DHaNa' },
+      { gu:'જગત', en:'World', trans:'JaGaTa' },
+      { gu:'યશ', en:'Glory', trans:'YaSHa' }
+    ],
+    sentences: [
+      { gu:'ભરત, ન ડર.', trans:'BHaRaTa, Na DaRa.', en:'Bharat, don’t be afraid.' },
+      { gu:'મનન, ભજન કર.', trans:'MaNaNa, BHaJaNa KaRa.', en:'Manan, do bhajan.' },
+      { gu:'પવન, પત્ર લખ.', trans:'PaVaNa, PaTRa LaKHa.', en:'Pavan, write a letter.' },
+      { gu:'રામ, રમત રમ.', trans:'RaMa, RaMaTa RaMa.', en:'Ram, play the game.' }
+    ]
+  },
+  {
+    num: 2, gu: 'પાઠ ૨', title: 'Vowel આ (“aa”)', vowel: 'આ',
+    intro: 'The aa-matra ા is attached to consonants in the middle or end of a word.',
+    words: [
+      { gu:'કાન', en:'Ear', trans:'KaNa' },
+      { gu:'કામ', en:'Work', trans:'KaMa' },
+      { gu:'મકાન', en:'Building', trans:'MaKaNa' },
+      { gu:'કાગળ', en:'Paper', trans:'KaGaLa' },
+      { gu:'ઘાસ', en:'Grass', trans:'GHaSa' },
+      { gu:'ગાય', en:'Cow', trans:'GaYa' },
+      { gu:'ગામ', en:'Village', trans:'GaMa' },
+      { gu:'ચા', en:'Tea', trans:'CHa' },
+      { gu:'છાશ', en:'Buttermilk', trans:'CHHaSHa' },
+      { gu:'જાગ', en:'Arise', trans:'JaGa' },
+      { gu:'ઝાડ', en:'Tree', trans:'ZaaDa' },
+      { gu:'તાર', en:'Wire', trans:'TaRa' },
+      { gu:'દાન', en:'Donation', trans:'DaNa' },
+      { gu:'નામ', en:'Name', trans:'NaMa' },
+      { gu:'પાન', en:'Leaf', trans:'PaNa' },
+      { gu:'બાગ', en:'Garden', trans:'BaGa' },
+      { gu:'ભારત', en:'India', trans:'BHaRaTa' },
+      { gu:'માતા', en:'Mother', trans:'MaTa' },
+      { gu:'યાદ', en:'Memory', trans:'YaaDa' },
+      { gu:'રાત', en:'Night', trans:'RaTa' },
+      { gu:'લાલ', en:'Red', trans:'LaLa' },
+      { gu:'વાદળ', en:'Cloud', trans:'VaDaLa' },
+      { gu:'શાળા', en:'School', trans:'SHaLa' },
+      { gu:'સાપ', en:'Snake', trans:'SaPa' },
+      { gu:'હાર', en:'Garland', trans:'HaRa' }
+    ],
+    sentences: [
+      { gu:'કાનન, તારા કાન સાફ કર.', trans:'KaNaNa, TaRa KaNa SaFa KaRa.', en:'Kanan, clean your ears.' },
+      { gu:'તારા, ખાટા ફળ ન ખા.', trans:'TaRa, KhaTa FaLa Na Kha.', en:'Tara, do not eat sour fruits.' },
+      { gu:'ભાઈ, ઘાસ કાપ.', trans:'BHaI, GHaSa KaPa.', en:'Brother, cut the grass.' },
+      { gu:'બા, ચા લાવ.', trans:'Ba, CHa LaVa.', en:'Mother, bring tea.' },
+      { gu:'કાજલ, ગાયન ગા.', trans:'KaJaLa, GaYaNa Ga.', en:'Kajal, sing a song.' },
+      { gu:'આચાર બરાબર રાખ.', trans:'AaCHaRa BaRaBaRa RaKHa.', en:'Keep your conduct good.' },
+      { gu:'ભારત, ઝાલર વગાડ.', trans:'BHaRaTa, JhaLaRa VaGaDa.', en:'Bharat, play the gong.' },
+      { gu:'મારા મા-બાપ મહાન.', trans:'MaRa Ma-BaPa MaHaNa.', en:'My mom and dad are great.' },
+      { gu:'મહારાજાના હાર લાવ.', trans:'MaHaRaJaNa HaRa LaVa.', en:'Bring garlands for Maharaj.' },
+      { gu:'ભગવાનના દાસ સારા.', trans:'BHaGaVaNaNa DaSa SaRa.', en:'God’s devotees are great.' }
+    ]
+  },
+  {
+    num: 3, gu: 'પાઠ ૩', title: 'Vowel એ (“ae”)', vowel: 'એ',
+    intro: 'The e-matra ˇ sits above consonants. The vowel is spoken like “ae” in neck, ten, bell.',
+    words: [
+      { gu:'એક', en:'One', trans:'EKa' },
+      { gu:'એટમ', en:'Atom', trans:'ETaMa' },
+      { gu:'કેમ', en:'How', trans:'KeMa' },
+      { gu:'કેશ', en:'Hair', trans:'KeSHa' },
+      { gu:'કેક', en:'Cake', trans:'KeKa' },
+      { gu:'ખેલ', en:'Play', trans:'KheLa' },
+      { gu:'ખેતર', en:'Farm', trans:'KheTaRa' },
+      { gu:'ગેસ', en:'Gas', trans:'GeSa' },
+      { gu:'ઘેન', en:'Sleepiness', trans:'GHeNa' },
+      { gu:'ચેન', en:'Comfort', trans:'CHeNa' },
+      { gu:'છેદ', en:'Hole', trans:'CHHeDa' },
+      { gu:'ઝેર', en:'Poison', trans:'JheRa' },
+      { gu:'ટેબલ', en:'Table', trans:'TeBaLa' },
+      { gu:'ડેમ', en:'Dam', trans:'DeMa' },
+      { gu:'નેત્ર', en:'Eyes', trans:'NeTRa' },
+      { gu:'દેવ', en:'God', trans:'DeVa' },
+      { gu:'દેશ', en:'Country', trans:'DeSHa' },
+      { gu:'પેન', en:'Pen', trans:'PeNa' },
+      { gu:'સફેદ', en:'White', trans:'SaFeDa' },
+      { gu:'બેન', en:'Sister', trans:'BeNa' },
+      { gu:'મેઘ', en:'Cloud, rain', trans:'MeGHa' },
+      { gu:'રેલ', en:'Rail', trans:'ReLa' },
+      { gu:'સેવા', en:'Service', trans:'SeVa' },
+      { gu:'હેત', en:'Love', trans:'HeTa' },
+      { gu:'ગણેશ', en:'Ganesh', trans:'GaNeSHa' }
+    ],
+    sentences: [
+      { gu:'કેતન, કેમ છે?', trans:'KeTaNa, KeMa CHHe?', en:'Ketan, how are you?' },
+      { gu:'તારા કેશ કાળા છે.', trans:'TaRa KeSHa KaLa CHHe.', en:'Your hair is black.' },
+      { gu:'નટ ખેલ કરે છે.', trans:'NaTa KheLa KaRe CHHe.', en:'The rope-dancer is doing his play.' },
+      { gu:'સવારે મા-બાપને પગે લાગ.', trans:'SaVaRe Ma-BaPaNe PaGe LaGa.', en:'Bow down to parents in the morning.' },
+      { gu:'ભગવાન બધે છે.', trans:'BHaGaVaNa BaDHe CHHe.', en:'God is everywhere.' },
+      { gu:'મેઘ ગાજે છે.', trans:'MeGHa GaJe CHHe.', en:'Clouds are thundering.' },
+      { gu:'મેજર રમે છે.', trans:'MeJaRa RaMe CHHe.', en:'Major is playing.' },
+      { gu:'ફળ દરેકને આપ.', trans:'FaLa DaReKaNe AaPa.', en:'Give fruit to everyone.' }
+    ]
+  },
+  {
+    num: 4, gu: 'પાઠ ૪', title: 'Review for Lessons 1, 2, 3 + વાંચન', vowel: null,
+    intro: 'Review chapter with reading passages — the Tara poem and the Ba–Bapa–Kaka passage.',
+    words: [
+      { gu:'ભાર', en:'Weight', trans:'BHaRa' },
+      { gu:'આભાર', en:'Gratitude', trans:'AaBHaRa' },
+      { gu:'રામ', en:'Lord Ram', trans:'RaMa' },
+      { gu:'આરામ', en:'Rest', trans:'AaRaMa' },
+      { gu:'કાર', en:'Car', trans:'KaRa' },
+      { gu:'આકાર', en:'Form', trans:'AaKaRa' }
+    ],
+    sentences: [
+      { gu:'રાધા, વાત ન કર.', trans:'RaDHa, VaTa Na KaRa.', en:'Radha, do not talk.' },
+      { gu:'કેતન, ઝાડ પર ચઢ.', trans:'KeTaNa, JhaaDa PaRa CHaDHa.', en:'Ketan, climb the tree.' },
+      { gu:'ભારત મહાન દેશ છે.', trans:'BHaRaTa MaHaNa DeSHa CHHe.', en:'India is a great country.' },
+      { gu:'ભાઈ - બેન રમે છે.', trans:'BHaI-BeNa RaMe CHHe.', en:'Brother and sister are playing.' },
+      { gu:'હા, ભગવાન બધે છે.', trans:'Ha, BHaGaVaNa BaDHe CHHe.', en:'Yes, god is everywhere.' }
+    ],
+    passages: [
+      {
+        title: 'તારા (Stars) - poem',
+        gu: 'તારા તારા તારા,\nનાના નાના તારા તારા,\nકેટલાક કહે તારલા એને,\nમનગમતા રહે બધાને.\n\nઆકાશે ચમકે તારા,\nરાતે ચમકે,\nલબક ઝબક ચમકે તારા,\nમધરાતે ઝમકે.\n\nમને તારા ગમે,\nતને તારા ગમે,\nબધાને તારા ગમે.',
+        en: 'Stars stars stars,\nLittle little stars stars,\nSome call them tarla (stars),\nEveryone likes them.\n\nThey shine in the sky,\nShine at night,\nTwinkling twinkling shine the stars,\nThey glitter at midnight.\n\nI like stars, you like stars,\nEveryone likes stars.'
+      },
+      {
+        title: 'બા (Grandmother)',
+        gu: 'અમારા બા છે.\nમારા બા, ભાઈના બા, બહેનના બા, બધાના બા.\nનામ છે હેમાબા.\nબા અમને જગાડે. બા અમને નવરાવે.\nબા અમને ખવરાવે. બા અમને ભણાવે.\nબા અમને કપડાં પહેરાવે.\nબા અમને વાર્તા કહે.\nબા અમને મજા કરાવે.\nબા જપ કરે અને અમને કરાવે.\nબા ભજન કરે અને અમને કરાવે.',
+        en: 'We have a grandmother.\nMy grandma, brother’s grandma, sister’s grandma — everyone’s grandma.\nHer name is Hemaba.\nGranny wakes us, bathes us, feeds us, teaches us, dresses us, tells us stories, makes us laugh.\nGranny chants and makes us chant. Granny sings bhajans and makes us sing.'
+      }
+    ]
+  },
+  {
+    num: 5, gu: 'પાઠ ૫', title: 'Vowel ઇ (“i” — short)', vowel: 'ઇ',
+    intro: 'The i-matra ી sits to the left of the consonant. Spoken as “i” in sing, dish, hit.',
+    words: [
+      { gu:'કિરણ', en:'Ray', trans:'KiRaNa' },
+      { gu:'કિસાન', en:'Farmer', trans:'KiSaNa' },
+      { gu:'કિનારા', en:'Bank of river', trans:'KiNaRa' },
+      { gu:'ખિજવ', en:'Tease', trans:'KhiJaVa' },
+      { gu:'અખિલ', en:'Whole', trans:'AKhiLa' },
+      { gu:'ગિરિ', en:'Mountain', trans:'GiRi' },
+      { gu:'અગિયાર', en:'Eleven', trans:'AGiYaRa' },
+      { gu:'ગિરનાર', en:'Mt. Girnar', trans:'GiRaNaRa' },
+      { gu:'ચિત્ર', en:'Picture', trans:'CHiTRa' },
+      { gu:'જિરાફ', en:'Giraffe', trans:'JiRaFa' },
+      { gu:'જિજ્ઞાસા', en:'Curiosity', trans:'JiGNaSa' },
+      { gu:'ટિકિટ', en:'Ticket', trans:'TiKiTa' },
+      { gu:'ઘડિયાળ', en:'Clock', trans:'GHaDiYaaLa' },
+      { gu:'દિવસ', en:'Day', trans:'DiVaSa' },
+      { gu:'દિલ', en:'Heart', trans:'DiLa' },
+      { gu:'નિશાન', en:'Aim', trans:'NiSHaaNa' },
+      { gu:'નિશાળ', en:'School', trans:'NiSHaLa' },
+      { gu:'પિતા', en:'Father', trans:'PiTa' },
+      { gu:'મિત્ર', en:'Friend', trans:'MiTRa' },
+      { gu:'મિજાજ', en:'Temper', trans:'MiJaJa' },
+      { gu:'મિઠાઈ', en:'Sweet', trans:'MiTHaI' },
+      { gu:'રિક્ષા', en:'Rickshaw', trans:'RiKSHa' },
+      { gu:'વિમાન', en:'Airplane', trans:'ViMaaNa' },
+      { gu:'સિતાર', en:'Sitar', trans:'SiTaRa' },
+      { gu:'હિમ', en:'Ice', trans:'HiMa' }
+    ],
+    sentences: [
+      { gu:'કિરણ કિસાન છે.', trans:'KiRaNa KiSaNa CHHe.', en:'Kiran is a farmer.' },
+      { gu:'અખિલ બધાને ખિજવ નહિ.', trans:'AKhiLa BaDHaNe KhiJaVa NaHi.', en:'Akhil, don’t tease everybody.' },
+      { gu:'ગિરિરાજ, અગિયાર ગણ.', trans:'GiRiRaJa, AGiYaRa GaNa.', en:'Girraj, count up to eleven.' },
+      { gu:'ચિરાગ, સરસ ચિત્ર બનાવ.', trans:'CHiRaGa, SaRaSa CHiTRa BaNaVa.', en:'Chirag, draw a fine picture.' },
+      { gu:'ટિફિન લાઈને કામે જા.', trans:'TiFiNa LaINe KaMe Ja.', en:'Take tiffin and go to work.' },
+      { gu:'માતા-પિતાને નમન કર.', trans:'MaTa-PiTaNe NaMaNa KaRa.', en:'Bow to your mother and father.' },
+      { gu:'મારા શિક્ષક સારા છે.', trans:'MaRa SHiKSHaKa SaRa CHHe.', en:'My teacher is good.' },
+      { gu:'ઋષિ તપ કરે છે.', trans:'RuSHi TaPa KaRe CHHe.', en:'Rishi is doing penance.' }
+    ]
+  },
+  {
+    num: 6, gu: 'પાઠ ૬', title: 'Vowel ઈ (“ee” — long)', vowel: 'ઈ',
+    intro: 'The long-ee matra ી hangs from a vertical bar. Spoken as “ee” in sheep, feet, machine.',
+    words: [
+      { gu:'કીડી', en:'Ant', trans:'KeeDee' },
+      { gu:'કીચડ', en:'Mud', trans:'KeeCHaDa' },
+      { gu:'કેચેન', en:'Key-chain', trans:'KeeCHeyN' },
+      { gu:'કેટલી', en:'Kettle', trans:'KeTaLee' },
+      { gu:'ખીલી', en:'Nail', trans:'KheeLee' },
+      { gu:'તીખી', en:'Spicy', trans:'TeeKhee' },
+      { gu:'માખી', en:'Bee', trans:'MaaKhee' },
+      { gu:'ગીત', en:'Song', trans:'GeeTa' },
+      { gu:'ગીતા', en:'Bhagavad Gita', trans:'GeeTa' },
+      { gu:'ઘી', en:'Ghee', trans:'GHee' },
+      { gu:'ઘીસ', en:'Deep cut', trans:'GHeeSa' },
+      { gu:'મરઘી', en:'Hen', trans:'MaRaGHee' },
+      { gu:'ચીજ', en:'Thing', trans:'CHeeJa' },
+      { gu:'ચીકાશ', en:'Greasiness', trans:'CHeeKaSHa' },
+      { gu:'ચીન', en:'China', trans:'CHeeNa' },
+      { gu:'છીપ', en:'Sea shell', trans:'CHHeePa' },
+      { gu:'જીત', en:'Victory', trans:'JeeTa' },
+      { gu:'દરજી', en:'Tailor', trans:'DaRaJee' },
+      { gu:'મીણ', en:'Wax', trans:'MeeNa' },
+      { gu:'મિનિટ', en:'Minute', trans:'MiNiTa' },
+      { gu:'શિક્ષક', en:'Teacher', trans:'SHiKSHaKa' },
+      { gu:'સિતાર', en:'Sitar', trans:'SiTaRa' },
+      { gu:'હિસાબ', en:'Account', trans:'HiSaBa' }
+    ],
+    sentences: [
+      { gu:'કીડી કીચડમાં ચાલે છે.', trans:'KeeDee KeeCHaDa-Ma CHaaLe CHHe.', en:'Ant is walking in the mud.' },
+      { gu:'દિવાલમાં ખીલી માર.', trans:'DiVaLa-Ma KheeLee MaRa.', en:'Hammer a nail in the wall.' },
+      { gu:'માલા, ગીતા ગા.', trans:'MaLa, GeeTa Ga.', en:'Mala, sing the Gita.' },
+      { gu:'મરઘી જીવડા ખાય છે.', trans:'MaRaGHee JeeVaDa Khaay CHHe.', en:'Hen is eating insects.' },
+      { gu:'ચમચી ભરી ઘી આપ.', trans:'CHaMaCHee BHaRee GHee AaPa.', en:'Give a spoon full of ghee.' },
+      { gu:'ગીતા સફરજન ઝીલે છે.', trans:'GeeTa SaFaRaJaNa Zeele CHHe.', en:'Geeta is catching an apple.' }
+    ]
+  },
+  {
+    num: 7, gu: 'પાઠ ૭', title: 'Vowel ઉ (“u” — short)', vowel: 'ઉ',
+    intro: 'The u-matra ુ sits below the consonant. Spoken as “u” in full, put, guru.',
+    words: [
+      { gu:'કુમાર', en:'Teenager', trans:'KuMaRa' },
+      { gu:'કુસુમ', en:'Flower', trans:'KuSuMa' },
+      { gu:'ચીકુ', en:'Chiku (fruit)', trans:'CHeeKu' },
+      { gu:'કુહાડી', en:'Axe', trans:'KuHaaDee' },
+      { gu:'કુમુદ', en:'White lily', trans:'KuMuDa' },
+      { gu:'ખુશ', en:'Happy', trans:'KhuSHa' },
+      { gu:'ખુશી', en:'Happiness', trans:'KhuSHee' },
+      { gu:'ખુરશી', en:'Chair', trans:'KhuRaSHee' },
+      { gu:'ગુણ', en:'Quality', trans:'GuNa' },
+      { gu:'ગુરુ', en:'Guru', trans:'GuRu' },
+      { gu:'ગુલાબ', en:'Rose', trans:'GuLaBa' },
+      { gu:'ગુલામ', en:'Slave', trans:'GuLaMa' },
+      { gu:'ઘુવડ', en:'Owl', trans:'GhuVaDa' },
+      { gu:'કાજુ', en:'Cashew', trans:'KaaJu' },
+      { gu:'સાધુ', en:'Saint', trans:'SaDHu' },
+      { gu:'સાબુ', en:'Soap', trans:'SaBu' },
+      { gu:'પુલ', en:'Bridge', trans:'PuLa' },
+      { gu:'દુકાન', en:'Shop', trans:'DuKaaNa' },
+      { gu:'હનુમાન', en:'Hanuman', trans:'HaNuMaaNa' },
+      { gu:'સૂરજ', en:'Sun', trans:'SuRaJa' }
+    ],
+    sentences: [
+      { gu:'કુમાર, કાજુ ખા.', trans:'KuMaRa, KaaJu Kha.', en:'Kumar, eat cashews.' },
+      { gu:'સુરભી, ખુરશી ઉપર બેસ.', trans:'SuRaBHee, KhuRaSHee UPaRa BeSa.', en:'Surbhi, sit on the chair.' },
+      { gu:'સુમન, ગુરુનો ગુણ ગા.', trans:'SuMaNa, GuRuNo GuNa Ga.', en:'Suman, sing the glory of the guru.' },
+      { gu:'રઘુપતિ રાઘવ રાજા રામ.', trans:'RaGHuPaTi RaGHaVa RaJa RaMa.', en:'Lord Ram, the king of Raghus.' },
+      { gu:'સાધુ ઘરોઘર ઝોળી માગે છે.', trans:'SaDHu GHaRoGHaRa JhoLee MaGe CHHe.', en:'Sadhu begs for alms at every home.' }
+    ]
+  },
+  {
+    num: 8, gu: 'પાઠ ૮', title: 'Vowel ઊ (“oo” — long)', vowel: 'ઊ',
+    intro: 'The long-oo matra ૂ hangs below the consonant. Spoken as “oo” in cool, too, cartoon.',
+    words: [
+      { gu:'કૂતરી', en:'She-dog', trans:'KooTaRee' },
+      { gu:'કૂદ', en:'Jump', trans:'KooDa' },
+      { gu:'કૂચ', en:'March', trans:'KooCHa' },
+      { gu:'કૂકડી', en:'Hen', trans:'KooKaDee' },
+      { gu:'ખૂબી', en:'Speciality', trans:'KhooBee' },
+      { gu:'ખૂન', en:'Murder', trans:'KhooNa' },
+      { gu:'ખૂબ', en:'Plenty', trans:'KhooBa' },
+      { gu:'નૂતન', en:'New', trans:'NooTaNa' },
+      { gu:'મૂલ', en:'Root', trans:'MooLa' },
+      { gu:'પૂરક', en:'Supplement', trans:'PooRaKa' },
+      { gu:'ડૂબકી', en:'Dive', trans:'DooBaKee' },
+      { gu:'પાટલૂન', en:'Pants', trans:'PaTaLooNa' },
+      { gu:'ભૂલ', en:'Mistake', trans:'BHooLa' },
+      { gu:'ધૂળ', en:'Dust', trans:'DHooLa' },
+      { gu:'મજૂર', en:'Labourer', trans:'MaJooRa' },
+      { gu:'ખજૂર', en:'Date (fruit)', trans:'KhaJooRa' }
+    ],
+    sentences: [
+      { gu:'નૂતન, દિવાલ ઉપરથી કૂદ.', trans:'NooTaNa, DiVaLa UPaRaThi KooDa.', en:'Nutan, jump from the wall.' },
+      { gu:'સૂરજ, ખૂબ મજા કર.', trans:'SuRaJa, KhooBa MaJa KaRa.', en:'Suraj, enjoy a lot.' },
+      { gu:'પિતાજી, મારાથી ભૂલ થઈ.', trans:'PiTaJee, MaRaThee BHooLa Thai.', en:'Father, I made a mistake.' }
+    ]
+  },
+  {
+    num: 9, gu: 'પાઠ ૯', title: 'Review for Lessons 5, 6, 7, 8', vowel: null,
+    intro: 'Puzzles and sentence building combining short-i, long-ee, short-u and long-oo vowels.',
+    words: [
+      { gu:'રવિ', en:'Sun', trans:'RaVi' },
+      { gu:'ગુરુ', en:'Guru', trans:'GuRu' },
+      { gu:'તાજુ', en:'Fresh', trans:'TaJu' },
+      { gu:'પિતા', en:'Father', trans:'PiTa' },
+      { gu:'શૂર', en:'Brave', trans:'SHooRa' },
+      { gu:'મજૂર', en:'Labourer', trans:'MaJooRa' },
+      { gu:'નિવાસ', en:'Residence', trans:'NiVaSa' },
+      { gu:'મિનિટ', en:'Minute', trans:'MiNiTa' },
+      { gu:'બકરી', en:'Goat', trans:'BaKaRee' },
+      { gu:'હરિ', en:'Lord Hari', trans:'HaRi' }
+    ],
+    sentences: []
+  },
+  {
+    num: 10, gu: 'પાઠ ૧૦', title: 'Vowel ઓ (“o”)', vowel: 'ઓ',
+    intro: 'The o-matra ો hangs to the right with a curl. Spoken as “o” in store, floor, ox.',
+    words: [
+      { gu:'કાગડો', en:'Crow', trans:'KaGaDo' },
+      { gu:'ઘોડો', en:'Horse', trans:'GHoDo' },
+      { gu:'મોર', en:'Peacock', trans:'MoRa' },
+      { gu:'ચોર', en:'Thief', trans:'CHoRa' },
+      { gu:'ડોલ', en:'Bucket', trans:'DoLa' },
+      { gu:'ઢોલ', en:'Drum', trans:'DhoLa' },
+      { gu:'ટોપી', en:'Cap', trans:'ToPee' },
+      { gu:'તોપ', en:'Cannon', trans:'ToPa' },
+      { gu:'પોલીસ', en:'Police', trans:'PoLeeSa' },
+      { gu:'મહિનો', en:'Month', trans:'MaHiNo' },
+      { gu:'દરિયો', en:'Sea', trans:'DaRiYo' },
+      { gu:'રૂપિયો', en:'Rupee', trans:'RuPiYo' },
+      { gu:'મોક્ષ', en:'Liberation', trans:'MoKSHa' },
+      { gu:'અરીસો', en:'Mirror', trans:'AaReeSo' },
+      { gu:'ભરોસો', en:'Trust', trans:'BHaRoSo' },
+      { gu:'હોશિયાર', en:'Clever', trans:'HoSHiYaRa' },
+      { gu:'ઈશારો', en:'Gesture', trans:'IShaRo' },
+      { gu:'કિશોર', en:'Youth', trans:'KiSHoRa' },
+      { gu:'જોકર', en:'Joker', trans:'JoKaRa' },
+      { gu:'ભમરો', en:'Bee', trans:'BHaMaRo' }
+    ],
+    sentences: [
+      { gu:'કાગડો ડોક વાળી પાણી પીવે છે.', trans:'KaGaDo DoKa VaaLi PaaNi PiVe CHHe.', en:'The crow bends its neck and drinks water.' },
+      { gu:'આરતી વખતે ઢોલ વાગે.', trans:'AaRaTi VaKhaTe DhoLa VaGe.', en:'Drums are played during arti.' },
+      { gu:'ભણો ગણો હોશિયાર બનો.', trans:'BHaNo GaNo HoSHiYaRa BaNo.', en:'Learn and become smart.' },
+      { gu:'આ તોપ લોઢાની છે.', trans:'Aa ToPa LoDhaaNi CHHe.', en:'This cannon is made of iron.' },
+      { gu:'સારા મિત્રોની સોબત રાખો.', trans:'SaRa MiTRoNi SoBaTa RaKHo.', en:'Keep company of good friends.' },
+      { gu:'ભમરો ઊડે છે.', trans:'BHaMaRo OoDe CHHe.', en:'The bee is flying.' },
+      { gu:'મોર નાચે છે.', trans:'MoRa NaaCHe CHHe.', en:'The peacock is dancing.' }
+    ],
+    passages: [
+      {
+        title: 'ઘોડો (The Horse)',
+        gu: 'ઘોડો કોને ન ગમે?\nનાનો છોકરો હોય કે નાની છોકરી હોય - બધાને ઘોડો ગમે.\nઘોડો જોવો ગમે અને ઘોડા ઉપર બેસવાનું પણ ગમે.\nઘોડો ઘાસ ખાય ઘોડો કેટલીક વાર ડબ્બાનો ખોરાક ખાય.\nઘોડો ગાય જેવા ઘરનો જાનવર નથી. ઘોડો જંગલમાં પણ રહે.\nઘોડો વફાદાર જાનવર છે. ઘોડો સવારી માટે જ વપરાય.',
+        en: 'Who does not like a horse?\nA small boy, a small girl — everyone likes a horse.\nWe enjoy looking at a horse and we enjoy riding it.\nA horse eats grass; sometimes it also eats packaged food.\nA horse is not a domestic animal like a cow. A horse can also live in the jungle.\nA horse is a loyal animal; it is used for riding.'
+      }
+    ]
+  },
+  {
+    num: 11, gu: 'પાઠ ૧૧', title: 'Vowel ઐ (“ai”)', vowel: 'ઐ',
+    intro: 'The ai-matra ૈ sits above with two strokes. Spoken as “ai” in maid, aids, jain.',
+    words: [
+      { gu:'કૈલાસ', en:'Mt. Kailash', trans:'KaiLaSa' },
+      { gu:'કૈકેયી', en:'Kaikeyi', trans:'KaiKeYee' },
+      { gu:'ચૈત્ર', en:'Chaitra month', trans:'CHaiTRa' },
+      { gu:'જૈન', en:'Jain', trans:'JaiNa' },
+      { gu:'જૈમિની', en:'Jaimini', trans:'JaiMiNee' },
+      { gu:'મૈત્રી', en:'Friendship', trans:'MaiTRee' },
+      { gu:'મૈયા', en:'Mother', trans:'MaiYa' },
+      { gu:'દૈવી', en:'Divine', trans:'DaiVee' },
+      { gu:'દૈત્ય', en:'Demon', trans:'DaiTYa' },
+      { gu:'વૈદ્ય', en:'Doctor', trans:'VaiDYa' },
+      { gu:'સૈનિક', en:'Soldier', trans:'SaiNiKa' },
+      { gu:'સૈન્ય', en:'Army', trans:'SaiNYa' }
+    ],
+    sentences: [
+      { gu:'યાત્રાળુઓ કૈલાસની યાત્રા કરવા જાય.', trans:'YaTRaLuo KaiLaSaNee YaTRa KaRaVa Jaay.', en:'Pilgrims do the pilgrimage of Mt. Kailash.' },
+      { gu:'ચૈત્રમાં ઘણો તાપ હોય.', trans:'CHaiTRa-Ma GHaNo TaPa Hoy.', en:'It is too hot in Chaitra.' },
+      { gu:'જૈન સાધુઓ તપ કરે.', trans:'JaiNa SaDHuo TaPa KaRe.', en:'Jain sadhus do penance.' }
+    ]
+  },
+  {
+    num: 12, gu: 'પાઠ ૧૨', title: 'Vowel ઔ (“au”)', vowel: 'ઔ',
+    intro: 'The au-matra ૌ sits above. Spoken as “au” in ounce, house, aum.',
+    words: [
+      { gu:'કૌમાર', en:'Adolescence', trans:'KauMaRa' },
+      { gu:'કૌશિક', en:'Kaushik (sage)', trans:'KauSHiKa' },
+      { gu:'કૌતુક', en:'Wonder', trans:'KauTuKa' },
+      { gu:'કૌવત', en:'Strength', trans:'KauVaTa' },
+      { gu:'ગૌણ', en:'Inferior', trans:'GauNa' },
+      { gu:'ગૌશાળા', en:'Cow-pen', trans:'GauSHaLa' },
+      { gu:'ગૌરવ', en:'Glory', trans:'GauRaVa' },
+      { gu:'ગૌતમ', en:'Gautam Buddha', trans:'GauTaMa' },
+      { gu:'મૌન', en:'Silence', trans:'MauNa' },
+      { gu:'યૌવન', en:'Youth', trans:'YauVaNa' },
+      { gu:'સૌર', en:'Solar', trans:'SauRa' },
+      { gu:'સૌભાગ્ય', en:'Good fortune', trans:'SauBHaGYa' }
+    ],
+    sentences: [
+      { gu:'કૌશિક ઋષિ કૌતુક કરતા.', trans:'KauSHiKa RuSHi KauTuKa KaRaTa.', en:'Sage Kaushik used to do wonders.' },
+      { gu:'ગૌતમ અને ગૌરવ ગૌશાળામાં સેવા કરે છે.', trans:'GauTaMa Ane GauRaVa GauSHaLa-Ma SeVa KaRe CHHe.', en:'Gautam and Gaurav are doing service in the cow-pen.' }
+    ]
+  },
+  {
+    num: 13, gu: 'પાઠ ૧૩', title: 'Review for Lessons 10, 11, 12', vowel: null,
+    intro: 'Combined review of vowels ઓ, ઐ, ઔ.',
+    words: [
+      { gu:'ગૌશાળા', en:'Cow-pen', trans:'GauSHaLa' },
+      { gu:'કૈલાસ', en:'Kailash', trans:'KaiLaSa' },
+      { gu:'ગૌતમ', en:'Gautam', trans:'GauTaMa' },
+      { gu:'મૈયા', en:'Mother', trans:'MaiYa' },
+      { gu:'મૌન', en:'Silence', trans:'MauNa' },
+      { gu:'મૈત્રી', en:'Friendship', trans:'MaiTRee' }
+    ],
+    sentences: [
+      { gu:'ગૌશાળામાં ચૌદ ગાય છે.', trans:'GauSHaLa-Ma CHauDa Gaay CHHe.', en:'There are fourteen cows in the cow-pen.' },
+      { gu:'કનૈયો પૈસાથી પપૈયા લે છે.', trans:'KaNaiyo PaiSaThee PaPaiYa Le CHHe.', en:'Kanaiyo buys papaya with money.' }
+    ]
+  },
+  {
+    num: 14, gu: 'પાઠ ૧૪', title: 'Book Review', vowel: null,
+    intro: 'Final comprehensive review covering all twelve vowels of the book.',
+    words: [],
+    sentences: []
+  }
+];
+
+/* =============================================================
    PRE-TEST BANK
    Modeled after "Level 2 Spring Term Pre-test (2025-2026)" PDF
    with extra content from Akshar Gujarati Learner-2, Lesson 10

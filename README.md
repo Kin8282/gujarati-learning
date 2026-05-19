@@ -8,7 +8,7 @@ An interactive, gamified web app designed to teach kids the Gujarati language st
 
 ## ✨ Features
 
-### 🗺️ 7-Step Learning Path
+### 🗺️ 8-Step Learning Path
 | Step | Section | What You Learn |
 |------|---------|---------------|
 | 1 | **સ્વર (Vowels)** | 13 Gujarati vowels with pronunciation |
@@ -16,8 +16,29 @@ An interactive, gamified web app designed to teach kids the Gujarati language st
 | 3 | **અંક (Numbers)** | Numbers 0–50 in Gujarati |
 | 4 | **શબ્દો (Words)** | Everyday vocabulary — fruits, animals, colors, body, home |
 | 5 | **વાંચન (Reading)** | Word reading & sentence comprehension |
-| 6 | **રમત (Quiz)** | 5 quiz types to test knowledge |
-| 7 | **પરીક્ષા (Pre-Test)** | Full Level-2 Spring Term style practice paper |
+| 6 | **પુસ્તક (Book Lessons)** | All 14 chapters of _Akshar Gujarati Learner 2_ |
+| 7 | **રમત (Quiz)** | 5 quiz types to test knowledge |
+| 8 | **પરીક્ષા (Pre-Test)** | Full Level-2 Spring Term style practice paper |
+
+### 📚 Book Lessons Mode
+Browse the entire BAPS workbook by chapter — each lesson focuses on one Gujarati vowel and shows the words, sentences and reading passages that use that vowel's matra.
+
+| # | Lesson | Vowel | Sample Words |
+|---|--------|-------|--------------|
+| 1 | Recap of Book One | — | હંસ, સરસ, ભજન, રક્ષણ, ધન |
+| 2 | Vowel આ (aa) | આ | કાન, ઘાસ, ગાય, માતા, ઝાડ |
+| 3 | Vowel એ (ae) | એ | એક, કેક, ખેતર, ગણેશ, સફેદ |
+| 4 | Review + વાંચન | — | _"Tara" poem · Ba/Bapa/Kaka_ |
+| 5 | Vowel ઇ (i short) | ઇ | કિરણ, મિત્ર, વિમાન, રિક્ષા |
+| 6 | Vowel ઈ (ee long) | ઈ | કીડી, ગીતા, ઘી, મરઘી, ચીન |
+| 7 | Vowel ઉ (u short) | ઉ | કુમાર, ગુરુ, ગુલાબ, હનુમાન |
+| 8 | Vowel ઊ (oo long) | ઊ | નૂતન, કૂદ, મજૂર, ખજૂર, ધૂળ |
+| 9 | Review 5,6,7,8 | — | રવિ, ગુરુ, મજૂર, વિમાન |
+| 10 | Vowel ઓ (o) | ઓ | ઘોડો, કાગડો, ઢોલ, મોર · _ઘોડો passage_ |
+| 11 | Vowel ઐ (ai) | ઐ | કૈલાસ, મૈત્રી, જૈન, મૈયા |
+| 12 | Vowel ઔ (au) | ઔ | ગૌતમ, કૌશિક, ગૌશાળા, મૌન |
+| 13 | Review 10,11,12 | — | ગૌશાળા, કનૈયો, પપૈયા |
+| 14 | Book Review | — | Comprehensive recap |
 
 ### 📝 Pre-Test Mode (Exam Practice)
 A randomized 7-section practice paper modeled after the BAPS Satsang Development Committee **"Level 2 Spring Term Pre-test"** and seeded with content from **Akshar Gujarati Learner-2, Lesson 10 (vowel ઓ)**.
